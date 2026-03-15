@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pedrofenixia.github.io/residencia-torrevieja/sitemap.xml
