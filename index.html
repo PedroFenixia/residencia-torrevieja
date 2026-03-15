@@ -340,13 +340,15 @@ a {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg,
-        #0d2137 0%,
-        #1B4965 30%,
-        #2D6A8F 60%,
-        #5FA8D3 85%,
-        #87CEEB 100%
-    );
+    background:
+        linear-gradient(180deg,
+            rgba(13,33,55,0.55) 0%,
+            rgba(27,73,101,0.4) 40%,
+            rgba(13,33,55,0.7) 100%
+        ),
+        url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-bg::before {
@@ -1336,6 +1338,12 @@ section {
     min-height: 120px;
 }
 
+.form-required-note {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: -0.5rem;
+}
+
 .btn-submit {
     padding: 1rem 3rem;
     background: var(--gold);
@@ -1449,6 +1457,24 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
+}
+
+.callback-title {
+    color: var(--white);
+}
+
+.callback-title em {
+    color: var(--white);
+    text-decoration: underline;
+    text-decoration-color: var(--gold-light);
+    text-underline-offset: 4px;
+}
+
+.callback-subtitle {
+    color: rgba(255,255,255,0.75);
+    font-family: var(--font-accent);
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
 .callback-form {
@@ -2451,19 +2477,20 @@ section {
             <input type="hidden" name="_next" value="https://pedrofenixia.github.io/residencia-torrevieja/#contacto">
             <input type="hidden" name="_language" value="es">
             <div class="form-row">
-                <input type="text" name="nombre" placeholder="Nombre completo" required>
-                <input type="tel" name="telefono" placeholder="Telefono" required>
+                <input type="text" name="nombre" placeholder="Nombre completo *" required>
+                <input type="tel" name="telefono" placeholder="Telefono *" required>
             </div>
-            <input type="email" name="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="Email *" required>
             <select name="interes" required title="Seleccione su interes">
-                <option value="" disabled selected>Me interesa...</option>
+                <option value="" disabled selected>Me interesa... *</option>
                 <option value="Concertar una visita">Concertar una visita</option>
                 <option value="Informacion general">Informacion general</option>
                 <option value="Disponibilidad de plazas">Disponibilidad de plazas</option>
                 <option value="Tarifas y precios">Tarifas y precios</option>
                 <option value="Otra consulta">Otra consulta</option>
             </select>
-            <textarea name="mensaje" placeholder="Cuentenos sobre su familiar y como podemos ayudarle..." required></textarea>
+            <textarea name="mensaje" placeholder="Cuentenos sobre su familiar y como podemos ayudarle... *" required></textarea>
+            <p class="form-required-note">* Todos los campos son obligatorios</p>
             <button type="submit" class="btn-submit">Enviar Solicitud</button>
         </form>
     </div>
@@ -2474,8 +2501,8 @@ section {
     <div class="container">
         <div class="callback-inner">
             <div class="callback-text">
-                <h2 class="section-title" style="color:var(--white)">¿Prefiere que <em>le llamemos</em>?</h2>
-                <p style="color:rgba(255,255,255,0.7);font-family:var(--font-accent);font-size:1.1rem;font-style:italic;">Dejenos su telefono y le contactamos en menos de 24 horas. Sin compromiso.</p>
+                <h2 class="section-title callback-title">¿Prefiere que <em>le llamemos</em>?</h2>
+                <p class="callback-subtitle">Dejenos su telefono y le contactamos en menos de 24 horas. Sin compromiso.</p>
             </div>
             <form class="callback-form" action="https://formspree.io/f/residencia@residenciamarbella.com" method="POST">
                 <input type="hidden" name="_subject" value="Solicitud de llamada desde la web Mar Bella">
