@@ -14,7 +14,7 @@
 
 ---
 
-**Asunto:** Cancelación del servicio de mantenimiento web — residenciamarbella.com
+**Asunto:** Cancelación del servicio de mantenimiento web — residenciamarbella.com y residenciamarbella.es
 
 Estimados señores de Publicidad Digital e-online AG SL,
 
@@ -23,7 +23,7 @@ Me dirijo a ustedes como representante legal del **Centro de Mayores Mar Bella**
 - Diseño y mantenimiento de la página web
 - Servicios de posicionamiento SEO
 - Servicios de publicidad digital / campañas de empresas
-- Cualquier otro servicio asociado al dominio residenciamarbella.com
+- Cualquier otro servicio asociado al dominio residenciamarbella.com y residenciamarbella.es
 
 Les solicito:
 
@@ -54,15 +54,15 @@ Email: residencia@residenciamarbella.com
 
 ---
 
-**Asunto:** Solicitud de código de autorización (Auth/EPP) para transferencia del dominio residenciamarbella.com
+**Asunto:** Solicitud de código de autorización (Auth/EPP) para transferencia del dominio residenciamarbella.com y residenciamarbella.es
 
 Estimados señores de Dinahosting,
 
-Me dirijo a ustedes como representante legal del **Centro de Mayores Mar Bella**, titular del dominio **residenciamarbella.com** (Registry Domain ID: 99925426_DOMAIN_COM-VRSN), registrado a través de su plataforma desde el 1 de julio de 2003.
+Me dirijo a ustedes como representante legal del **Centro de Mayores Mar Bella**, titular de los dominios **residenciamarbella.com** (Registry Domain ID: 99925426_DOMAIN_COM-VRSN) y **residenciamarbella.es**, registrados a través de su plataforma desde el 1 de julio de 2003. En caso de que el dominio .es no esté registrado con ustedes, les ruego me informen de quién es el registrador para poder solicitar también su transferencia.
 
 Por la presente, solicito formalmente:
 
-1. **El código de autorización (Auth-Code / EPP Code)** del dominio residenciamarbella.com para proceder a su transferencia a otro registrador antes de la fecha de expiración (1 de julio de 2026).
+1. **El código de autorización (Auth-Code / EPP Code)** del dominio residenciamarbella.com y residenciamarbella.es para proceder a su transferencia a otro registrador antes de la fecha de expiración (1 de julio de 2026).
 
 2. **La eliminación del bloqueo de transferencia** (clientTransferProhibited) actualmente activo en el dominio.
 
@@ -104,13 +104,13 @@ Email: residencia@residenciamarbella.com
 
 ---
 
-**Asunto:** REQUERIMIENTO FORMAL - Transferencia del dominio residenciamarbella.com - Último aviso antes de reclamación ante ICANN
+**Asunto:** REQUERIMIENTO FORMAL - Transferencia del dominio residenciamarbella.com y residenciamarbella.es - Último aviso antes de reclamación ante ICANN
 
 Estimados señores,
 
-En relación con mi anterior comunicación de fecha [FECHA DEL PRIMER EMAIL], y no habiendo recibido respuesta satisfactoria / habiéndoseme denegado la solicitud de transferencia del dominio **residenciamarbella.com**, les comunico lo siguiente:
+En relación con mi anterior comunicación de fecha [FECHA DEL PRIMER EMAIL], y no habiendo recibido respuesta satisfactoria / habiéndoseme denegado la solicitud de transferencia del dominio **residenciamarbella.com y residenciamarbella.es**, les comunico lo siguiente:
 
-**PRIMERO.** Que el dominio residenciamarbella.com fue registrado el 1 de julio de 2003 y el titular registral es [NOMBRE/EMPRESA], con CIF [CIF], con domicilio en Torrevieja (Alicante).
+**PRIMERO.** Que el dominio residenciamarbella.com y residenciamarbella.es fue registrado el 1 de julio de 2003 y el titular registral es [NOMBRE/EMPRESA], con CIF [CIF], con domicilio en Torrevieja (Alicante).
 
 **SEGUNDO.** Que conforme al artículo 8 de la Política de Transferencia entre Registradores de ICANN, el registrador perdedor (losing registrar) está obligado a facilitar la transferencia y no puede denegarla salvo en los supuestos taxativamente enumerados (fraude, disputa judicial, impago al registrador actual, o dominio registrado en los últimos 60 días).
 
@@ -138,15 +138,15 @@ Centro de Mayores Mar Bella
 
 ---
 
-**Asunto:** Solicitud de datos para migración del servicio de correo electrónico — residenciamarbella.com
+**Asunto:** Solicitud de datos para migración del servicio de correo electrónico — residenciamarbella.com y residenciamarbella.es
 
 Estimados señores de Tecnoworld,
 
-Me dirijo a ustedes como representante legal del **Centro de Mayores Mar Bella**. Actualmente gestionan ustedes los servidores DNS y el correo electrónico del dominio residenciamarbella.com.
+Me dirijo a ustedes como representante legal del **Centro de Mayores Mar Bella**. Actualmente gestionan ustedes los servidores DNS y el correo electrónico del dominio residenciamarbella.com y residenciamarbella.es.
 
 Les comunico que vamos a proceder a la **migración del servicio de correo electrónico y DNS** a otro proveedor. Para ello, necesitamos:
 
-1. **Listado completo de cuentas de correo** configuradas bajo el dominio residenciamarbella.com.
+1. **Listado completo de cuentas de correo** configuradas bajo el dominio residenciamarbella.com y residenciamarbella.es.
 2. **Datos de acceso IMAP/POP3** del servidor actual (servidor, puerto, usuario) para poder migrar los emails existentes.
 3. **Configuración DNS actual completa** (registros A, MX, CNAME, TXT, SPF, DKIM) para replicarla sin interrupción.
 4. **Confirmación de que no existen otros servicios** (bases de datos, subdominios, etc.) vinculados a nuestro dominio en sus servidores.
