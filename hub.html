@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub Mar Bella — Panel de Gestion</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+    --blue: #1B4965;
+    --blue-light: #2D6A8F;
+    --gold: #D4A017;
+    --gold-light: #F0C040;
+    --charcoal: #2C2C2C;
+    --cream: #FAF6EF;
+    --white: #fff;
+    --green: #27AE60;
+    --orange: #E67E22;
+    --red: #E74C3C;
+}
+body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charcoal); }
+
+.hub-header {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+    padding: 2rem 3rem;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hub-header h1 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 500; }
+.hub-header h1 span { color: var(--gold-light); }
+.hub-header .date { font-size: 0.82rem; opacity: 0.7; }
+
+.hub-container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+
+.hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card-header .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.card-header h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-body { padding: 1.5rem; }
+
+.card-body ul { list-style: none; }
+.card-body ul li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #f8f8f8;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+}
+.card-body ul li:last-child { border: none; }
+
+.card-body ul li a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.card-body ul li a:hover { color: var(--gold); }
+
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: auto;
+}
+.badge-live { background: #e8f5e9; color: var(--green); }
+.badge-pending { background: #fff3e0; color: var(--orange); }
+.badge-urgent { background: #fce4ec; color: var(--red); }
+.badge-draft { background: #e3f2fd; color: var(--blue); }
+
+.icon-blue { background: #e8f0fe; color: var(--blue); }
+.icon-gold { background: #fef9e7; color: var(--gold); }
+.icon-green { background: #e8f5e9; color: var(--green); }
+.icon-orange { background: #fff3e0; color: var(--orange); }
+.icon-red { background: #fce4ec; color: var(--red); }
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f8f8f8;
+    font-size: 0.85rem;
+}
+.info-row:last-child { border: none; }
+.info-label { color: #999; }
+.info-value { font-weight: 500; }
+
+.timeline { position: relative; padding-left: 1.5rem; }
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #f0f0f0;
+}
+.timeline-item {
+    position: relative;
+    padding: 0.6rem 0;
+    font-size: 0.85rem;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.85rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 2px solid var(--white);
+}
+.timeline-item.done::before { background: var(--green); }
+.timeline-item.pending::before { background: var(--orange); }
+.timeline-item.future::before { background: #ddd; }
+.timeline-date { font-size: 0.72rem; color: #999; }
+
+.doc-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    background: var(--cream);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.doc-link:hover { background: #eee; transform: translateX(3px); }
+.doc-link .ext { margin-left: auto; font-size: 0.7rem; color: #999; }
+
+.marketing-section { margin-top: 0.5rem; }
+.marketing-section h4 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+.marketing-section p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .hub-header { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
+    .hub-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="hub-header">
+    <div>
+        <h1>Mar <span>Bella</span> — Hub de Gestion</h1>
+        <p class="date">Actualizado: 15 marzo 2026</p>
+    </div>
+    <a href="index.html" style="color:var(--gold-light);font-size:0.82rem;text-decoration:none;">Ver landing &rarr;</a>
+</header>
+
+<div class="hub-container">
+<div class="hub-grid">
+
+<!-- LANDING WEB -->
+<div class="card">
+    <div class="card-header">
+        <div class="icon icon-blue">&#127760;</div>
+        <h2>Landing Web</h2>
+    </div>
+    <div class="card-body">
+        <ul>
+            <li>
+                <a href="index.html" target="_blank">Espanol (principal)</a>
+                <span class="badge badge-live">Live</span>
+            </li>
+            <li>
+                <a href="en.html" target="_blank">English</a>
+                <span class="badge badge-live">Live</span>
+            </li>
+            <li>
+                <a href="no.html" target="_blank">Norsk</a>
+                <span class="badge badge-live">Live</span>
+            </li>
+            <li>
+                <a href="aviso-legal.html" target="_blank">Aviso Legal</a>
+                <span class="badge badge-draft">Rellenar CIF</span>
+            </li>
+            <li>
+                <a href="privacidad.html" target="_blank">Politica de Privacidad</a>
+                <span class="badge badge-draft">Rellenar CIF</span>
+            </li>
+            <li>
+                <a href="cookies.html" target="_blank">Politica de Cookies</a>
+                <span class="badge badge-live">Live</span>
+            </li>
+        </ul>
+        <div class="info-row" style="margin-top:0.5rem;">
+            <span class="info-label">URL temporal</span>
+            <span class="info-value"><a href="https://pedrofenixia.github.io/residencia-torrevieja/" target="_blank" style="color:var(--blue);text-decoration:none;">pedrofenixia.github.io/residencia-torrevieja</a></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Hosting</span>
+            <span class="info-value">GitHub Pages</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Repo</span>
+            <span class="info-value"><a href="https://github.com/PedroFenixia/residencia-torrevieja" target="_blank" style="color:var(--blue);text-decoration:none;">GitHub</a></span>
+        </div>
+    </div>
+</div>
+
+<!-- DOMINIO & DNS -->
+<div class="card">
+    <div class="card-header">
+        <div class="icon icon-orange">&#128274;</div>
+        <h2>Dominio y Alojamiento</h2>
+    </div>
+    <div class="card-body">
+        <div class="info-row">
+            <span class="info-label">Dominio</span>
+            <span class="info-value">residenciamarbella.com</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Registrador</span>
+            <span class="info-value">Dinahosting</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">DNS actual</span>
+            <span class="info-value">Tecnoworld</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Expira</span>
+            <span class="info-value" style="color:var(--orange);font-weight:700;">1 julio 2026</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Estado</span>
+            <span class="info-value"><span class="badge badge-urgent">Bloqueado transferencia</span></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Destino</span>
+            <span class="info-value">Transferir a OVH</span>
+        </div>
+
+        <h4 style="font-size:0.78rem;font-weight:600;margin-top:1.2rem;margin-bottom:0.5rem;color:var(--blue);">DNS para GitHub Pages (configurar en OVH)</h4>
+        <div style="background:#f8f8f8;padding:0.8rem;border-radius:4px;font-family:monospace;font-size:0.78rem;line-height:1.8;">
+            A&nbsp;&nbsp;&nbsp;&nbsp; @ &rarr; 185.199.108.153<br>
+            A&nbsp;&nbsp;&nbsp;&nbsp; @ &rarr; 185.199.109.153<br>
+            A&nbsp;&nbsp;&nbsp;&nbsp; @ &rarr; 185.199.110.153<br>
+            A&nbsp;&nbsp;&nbsp;&nbsp; @ &rarr; 185.199.111.153<br>
+            CNAME www &rarr; pedrofenixia.github.io
+        </div>
+    </div>
+</div>
+
+<!-- TRANSFERENCIA DOMINIO -->
+<div class="card">
+    <div class="card-header">
+        <div class="icon icon-red">&#128220;</div>
+        <h2>Transferencia Dominio — Documentos</h2>
+    </div>
+    <div class="card-body">
+        <a href="docs/carta-dinahosting.md" target="_blank" class="doc-link">
+            &#128196; Carta solicitud codigo EPP (amistosa)
+            <span class="ext">MD</span>
+        </a>
+        <a href="docs/carta-dinahosting.md" target="_blank" class="doc-link">
+            &#9888; Requerimiento formal (si no responden)
+            <span class="ext">MD</span>
+        </a>
+        <a href="docs/carta-dinahosting.md" target="_blank" class="doc-link">
+            &#128663; Pasos transferencia a OVH
+            <span class="ext">MD</span>
+        </a>
+
+        <h4 style="font-size:0.78rem;font-weight:600;margin-top:1.2rem;margin-bottom:0.5rem;color:var(--blue);">Contactos clave</h4>
+        <div class="info-row">
+            <span class="info-label">Dinahosting</span>
+            <span class="info-value">981 040 200 / soporte@dinahosting.com</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">ICANN quejas</span>
+            <span class="info-value"><a href="https://www.icann.org/complaints/transfer" target="_blank" style="color:var(--blue);text-decoration:none;">icann.org/complaints</a></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">OVH dominios</span>
+            <span class="info-value"><a href="https://www.ovh.es/dominios/" target="_blank" style="color:var(--blue);text-decoration:none;">ovh.es/dominios</a></span>
+        </div>
+
+        <div class="timeline" style="margin-top:1rem;">
+            <div class="timeline-item done">
+                <div class="timeline-date">Hoy</div>
+                Carta enviada a Dinahosting
+            </div>
+            <div class="timeline-item pending">
+                <div class="timeline-date">+5 dias</div>
+                Requerimiento formal si no responden
+            </div>
+            <div class="timeline-item future">
+                <div class="timeline-date">+10 dias</div>
+                Reclamacion ICANN + OMIC
+            </div>
+            <div class="timeline-item future">
+                <div class="timeline-date">Mayo 2026</div>
+                Iniciar transferencia a OVH
+            </div>
+            <div class="timeline-item future">
+                <div class="timeline-date">Junio 2026</div>
+                Dominio en OVH, DNS apuntando a GitHub Pages
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PLAN MARKETING NORUEGOS -->
+<div class="card" style="grid-column: 1 / -1;">
+    <div class="card-header">
+        <div class="icon icon-green">&#127987;</div>
+        <h2>Plan de Marketing — Captacion Residentes Noruegos</h2>
+    </div>
+    <div class="card-body marketing-section">
+
+        <h4>1. Por que Noruega</h4>
+        <p>Noruega tiene una de las poblaciones envejecidas mas ricas de Europa. Muchos jubilados noruegos ya viven en la Costa Blanca (Torrevieja, Alfaz del Pi, Altea). El coste de una residencia en Noruega supera los 8.000-12.000 EUR/mes, frente a 2.000-4.000 EUR en Espana. El clima de Torrevieja (320 dias de sol) es el principal atractivo frente al invierno nordico.</p>
+
+        <h4>2. Publico objetivo</h4>
+        <p><strong>Primario:</strong> Hijos/as de 45-65 anos con padres mayores de 75, que buscan alternativas al sistema noruego. Muchos ya tienen conexion con Espana (segunda residencia, vacaciones).<br>
+        <strong>Secundario:</strong> Jubilados noruegos 70+ que ya residen en la Costa Blanca y necesitan cuidados asistidos.</p>
+
+        <h4>3. Canales digitales</h4>
+        <p><strong>Google Ads (Noruega):</strong> Campana en noruego con keywords: "eldresenter i Spania", "pleiehjem Torrevieja", "omsorgssenter Costa Blanca", "eldrehjem ved havet". Presupuesto sugerido: 500-800 EUR/mes. Landing: no.html<br><br>
+        <strong>Facebook/Instagram Ads:</strong> Segmentar: Noruega, 45-65 anos, intereses en "Spania", "Costa Blanca", "Torrevieja", "pensjon". Creatividades con fotos de la residencia + mar + sol. CTA: "Bestill et besok" (Solicita una visita).<br><br>
+        <strong>SEO en noruego:</strong> La landing no.html ya esta optimizada. Crear contenido blog en noruego sobre: vida en Torrevieja, comparativa costes Noruega vs Espana, testimonios de familias noruegas.</p>
+
+        <h4>4. Canales offline / comunidad</h4>
+        <p><strong>Iglesia Noruega en Alfaz del Pi:</strong> Den norske satisfying i Spania tiene sede en Alfaz. Contactar para poner folletos y asistir a eventos.<br>
+        <strong>Club Noruego Costa Blanca:</strong> Comunidad activa de noruegos residentes. Ofrecer charla informativa o jornada de puertas abiertas.<br>
+        <strong>Consulado Noruego en Alicante:</strong> Pedir inclusion en su lista de recursos para ciudadanos noruegos.<br>
+        <strong>Diario "Costa Blanca Avis":</strong> Periodico noruego local. Publicar anuncio o articulo patrocinado.</p>
+
+        <h4>5. Propuesta de valor diferencial</h4>
+        <p>- Unica residencia junto al mar en Torrevieja<br>
+        - Personal que habla ingles (40% residentes internacionales)<br>
+        - Coste 60-70% inferior a Noruega con mejor clima<br>
+        - Recien reformada, atencion personalizada 24h<br>
+        - Facilidad de visita: vuelos directos Oslo/Bergen → Alicante (2.5h)</p>
+
+        <h4>6. Materiales necesarios</h4>
+        <p>- Folleto digital en noruego (PDF descargable desde no.html)<br>
+        - Video tour de la residencia (1-2 min para redes)<br>
+        - Testimonio de familia noruega/internacional (si disponible)<br>
+        - Ficha comparativa de costes Noruega vs Mar Bella</p>
+
+        <h4>7. Calendario sugerido</h4>
+        <p><strong>Abril 2026:</strong> Activar Google Ads en noruego. Contactar Iglesia Noruega y Club Noruego.<br>
+        <strong>Mayo 2026:</strong> Campana Facebook/Instagram. Publicar en Costa Blanca Avis.<br>
+        <strong>Junio 2026:</strong> Jornada puertas abiertas para comunidad noruega. Video tour.<br>
+        <strong>Septiembre 2026:</strong> Segunda oleada publicitaria (los hijos visitan en verano y deciden en otono).</p>
+
+        <h4>8. KPIs</h4>
+        <p>- Visitas a no.html: objetivo 500/mes en 3 meses<br>
+        - Formularios recibidos en noruego: objetivo 10/mes<br>
+        - Visitas presenciales de familias noruegas: objetivo 3/mes<br>
+        - Coste por lead: objetivo &lt; 50 EUR</p>
+    </div>
+</div>
+
+<!-- PENDIENTES -->
+<div class="card">
+    <div class="card-header">
+        <div class="icon icon-gold">&#9745;</div>
+        <h2>Tareas Pendientes</h2>
+    </div>
+    <div class="card-body">
+        <ul>
+            <li>&#9745; Landing ES/EN/NO desplegada <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; SEO optimizado + Schema.org <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; Formularios con envio por email <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; Paginas legales RGPD <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; Chatbot + WhatsApp <span class="badge badge-live">Hecho</span></li>
+            <li>&#9744; Rellenar CIF en paginas legales <span class="badge badge-pending">Pendiente</span></li>
+            <li>&#9744; Fotos reales: amanecer, residentes <span class="badge badge-pending">Pendiente</span></li>
+            <li>&#9744; Confirmar email Formspree <span class="badge badge-pending">Pendiente</span></li>
+            <li>&#9744; Enviar carta a Dinahosting <span class="badge badge-urgent">Urgente</span></li>
+            <li>&#9744; Transferir dominio a OVH <span class="badge badge-pending">Mayo</span></li>
+            <li>&#9744; Configurar DNS en OVH <span class="badge badge-pending">Junio</span></li>
+            <li>&#9744; Google Analytics + Search Console <span class="badge badge-pending">Pendiente</span></li>
+            <li>&#9744; Campana Google Ads noruego <span class="badge badge-draft">Abril</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- CONTACTOS -->
+<div class="card">
+    <div class="card-header">
+        <div class="icon icon-blue">&#128222;</div>
+        <h2>Contactos del Proyecto</h2>
+    </div>
+    <div class="card-body">
+        <div class="info-row">
+            <span class="info-label">Residencia</span>
+            <span class="info-value">965 710 828 / 677 919 951</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Email</span>
+            <span class="info-value">residencia@residenciamarbella.com</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Dinahosting</span>
+            <span class="info-value">981 040 200</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">OVH Espana</span>
+            <span class="info-value">900 100 712</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Direccion</span>
+            <span class="info-value">Avda. Alfredo Nobel, 8, 03183 Torrevieja</span>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
