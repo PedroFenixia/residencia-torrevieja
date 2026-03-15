@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Residencia Mar Bella — Centro de Mayores en Torrevieja junto al Mar</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Residencia de mayores Mar Bella en Torrevieja. Más de 30 años de atención personalizada frente al Mediterráneo. Fisioterapia, médico 24h, rehabilitación y cuidados integrales.">
+<meta name="keywords" content="residencia tercera edad Torrevieja, residencia mayores Mar Bella, residencia geriátrica Costa Blanca, centro mayores Torrevieja, residencia junto al mar Alicante">
+<meta name="author" content="Centro de Mayores Mar Bella">
+<meta name="robots" content="index, follow">
+<meta name="language" content="Spanish">
+<meta name="theme-color" content="#1B4965">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Residencia Mar Bella — Centro de Mayores en Torrevieja junto al Mar">
+<meta property="og:description" content="Más de 30 años cuidando con cariño. La única residencia de mayores frente al Mediterráneo en Torrevieja.">
+<meta property="og:image" content="https://gransliving-backoffice.s3.eu-west-3.amazonaws.com/residencias/10266/fachada-marbella.jpg">
+<meta property="og:locale" content="es_ES">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #C5A55A;
+    --gold-light: #D4BA7A;
+    --gold-dark: #8B6914;
+    --cream: #FAF6EF;
+    --cream-dark: #F0E8D8;
+    --charcoal: #2C2C2C;
+    --charcoal-light: #4A4A4A;
+    --white: #FFFFFF;
+    --sea-blue: #1B4965;
+    --sea-medium: #2D6A8F;
+    --sea-light: #5FA8D3;
+    --sage: #87A878;
+    --warm-gray: #9B9B8E;
+    --font-display: 'Playfair Display', 'Georgia', serif;
+    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+    --font-accent: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--charcoal);
+    background: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1.25rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+    background: transparent;
+}
+
+.nav.scrolled {
+    background: rgba(255,255,255,0.97);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 1px 30px rgba(0,0,0,0.06);
+    padding: 0.8rem 3rem;
+}
+
+.nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    transition: color 0.5s;
+}
+
+.nav-logo span {
+    color: var(--gold-light);
+    font-weight: 700;
+}
+
+.nav.scrolled .nav-logo {
+    color: var(--charcoal);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav.scrolled .nav-links a {
+    color: var(--charcoal-light);
+}
+
+.nav-cta {
+    padding: 0.6rem 1.8rem;
+    background: var(--gold);
+    color: var(--white) !important;
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+}
+
+.nav-cta:hover {
+    background: var(--gold-dark);
+    transform: translateY(-1px);
+}
+
+.nav-cta::after {
+    display: none !important;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    width: 28px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+}
+
+.nav.scrolled .nav-toggle span {
+    background: var(--charcoal);
+}
+
+/* ═══════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════ */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg,
+            rgba(27,73,101,0.4) 0%,
+            rgba(27,73,101,0.2) 40%,
+            rgba(44,44,44,0.65) 100%
+        ),
+        url('https://gransliving-backoffice.s3.eu-west-3.amazonaws.com/residencias/10266/entorno-marbella.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(44,44,44,0.5), transparent);
+}
+
+.hero-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.hero-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(197, 165, 90, 0.3);
+    border-radius: 50%;
+    animation: float-particle 15s infinite ease-in-out;
+}
+
+@keyframes float-particle {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    50% { transform: translateY(-200px) translateX(50px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.8rem;
+    border: 1px solid rgba(197,165,90,0.6);
+    color: var(--gold-light);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: rgba(197,165,90,0.08);
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+.hero-subtitle {
+    font-family: var(--font-accent);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.8rem;
+    background: var(--gold);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.btn-primary:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139,105,20,0.3);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.8rem;
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold-light);
+    color: var(--gold-light);
+    background: rgba(197,165,90,0.08);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: bounce-scroll 2s infinite;
+}
+
+.hero-scroll .line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold-light), transparent);
+}
+
+@keyframes bounce-scroll {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ═══════════════════════════════════════════
+   SECTION COMMONS
+   ═══════════════════════════════════════════ */
+section {
+    padding: 7rem 2rem;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.section-title em {
+    font-style: italic;
+    color: var(--gold-dark);
+}
+
+.section-subtitle {
+    font-family: var(--font-accent);
+    font-size: 1.15rem;
+    color: var(--warm-gray);
+    max-width: 580px;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════
+   UNIQUE VALUE BANNER
+   ═══════════════════════════════════════════ */
+.unique-banner {
+    background: var(--sea-blue);
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.unique-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(197,165,90,0.08);
+}
+
+.unique-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -5%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(197,165,90,0.08);
+}
+
+.unique-banner .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.unique-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--white);
+}
+
+.unique-item .icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(197,165,90,0.15);
+    font-size: 1.3rem;
+}
+
+.unique-item h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.unique-item p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+}
+
+/* ═══════════════════════════════════════════
+   INTRO / ABOUT
+   ═══════════════════════════════════════════ */
+.intro {
+    background: var(--cream);
+}
+
+.intro .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.intro-image {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro-image::after {
+    content: '';
+    position: absolute;
+    inset: 1.5rem;
+    border: 1px solid rgba(197,165,90,0.3);
+    pointer-events: none;
+}
+
+.intro-image-label {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.intro-image-label h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+}
+
+.intro-image-label p {
+    font-size: 0.8rem;
+    color: var(--warm-gray);
+}
+
+.intro-text .section-subtitle {
+    margin-bottom: 2rem;
+}
+
+.intro-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(197,165,90,0.2);
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.03em;
+}
+
+/* ═══════════════════════════════════════════
+   SERVICES
+   ═══════════════════════════════════════════ */
+.services {
+    background: var(--white);
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.services-header .section-subtitle {
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 3rem 2.5rem;
+    background: var(--cream);
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover {
+    border-color: rgba(197,165,90,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border: 1px solid rgba(197,165,90,0.2);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    color: var(--charcoal);
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: var(--charcoal-light);
+    line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════
+   RENOVATION BANNER
+   ═══════════════════════════════════════════ */
+.renovation {
+    background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.renovation .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.renovation-content {
+    position: relative;
+    z-index: 1;
+}
+
+.renovation-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.renovation-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+    transition: all 0.3s;
+}
+
+.renovation-feature:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.renovation-feature .rf-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.renovation-feature h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--charcoal);
+}
+
+.renovation-feature p {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+}
+
+.renovation-image {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.renovation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.renovation-image::after {
+    content: '';
+    position: absolute;
+    inset: 1rem;
+    border: 1px solid rgba(197,165,90,0.3);
+    pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
+   AMENITIES / FEATURES
+   ═══════════════════════════════════════════ */
+.amenities {
+    background: var(--sea-blue);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.amenities::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(197,165,90,0.1);
+}
+
+.amenities .section-label {
+    color: var(--gold-light);
+}
+
+.amenities .section-title {
+    color: var(--white);
+}
+
+.amenities .section-title em {
+    color: var(--gold-light);
+}
+
+.amenities-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.amenities-header .section-subtitle {
+    margin: 0 auto;
+    color: rgba(255,255,255,0.65);
+}
+
+.amenities-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.amenity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.8rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.4s;
+}
+
+.amenity-item:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(197,165,90,0.2);
+}
+
+.amenity-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(197,165,90,0.15);
+    font-size: 1.2rem;
+}
+
+.amenity-item h4 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.amenity-item p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   GALLERY
+   ═══════════════════════════════════════════ */
+.gallery {
+    background: var(--cream);
+    padding-bottom: 5rem;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.gallery-header .section-subtitle {
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(4) {
+    grid-column: span 2;
+}
+
+.gallery-item .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,44,44,0.7), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════════════ */
+.testimonials {
+    background: var(--white);
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.testimonials-header .section-subtitle {
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.testimonial-card {
+    padding: 2.5rem;
+    background: var(--cream);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.3;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.testimonial-stars {
+    color: var(--gold);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.15em;
+}
+
+.testimonial-card blockquote {
+    font-family: var(--font-accent);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--charcoal-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.testimonial-author-info h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.testimonial-author-info p {
+    font-size: 0.78rem;
+    color: var(--warm-gray);
+}
+
+/* ═══════════════════════════════════════════
+   LOCATION
+   ═══════════════════════════════════════════ */
+.location {
+    background: var(--cream);
+}
+
+.location .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.location-map {
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.location-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.location-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    color: var(--gold-dark);
+    font-size: 1.1rem;
+    border: 1px solid rgba(197,165,90,0.15);
+}
+
+.location-item h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.location-item p {
+    font-size: 0.88rem;
+    color: var(--warm-gray);
+    line-height: 1.5;
+}
+
+.btn-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    background: var(--sea-blue);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-directions:hover {
+    background: var(--sea-medium);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(27,73,101,0.3);
+}
+
+/* ═══════════════════════════════════════════
+   CONTACT / CTA
+   ═══════════════════════════════════════════ */
+.contact {
+    background: var(--charcoal);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(197,165,90,0.05), transparent);
+}
+
+.contact .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.contact .section-title {
+    color: var(--white);
+}
+
+.contact .section-subtitle {
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-info-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(197,165,90,0.12);
+    color: var(--gold-light);
+    font-size: 1rem;
+}
+
+.contact-info-item p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.contact-info-item a {
+    color: var(--gold-light);
+    transition: color 0.3s;
+}
+
+.contact-info-item a:hover {
+    color: var(--white);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255,255,255,0.35);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.08);
+}
+
+.contact-form select {
+    appearance: none;
+    color: rgba(255,255,255,0.35);
+    cursor: pointer;
+}
+
+.contact-form select option {
+    background: var(--charcoal);
+    color: var(--white);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit {
+    padding: 1rem 3rem;
+    background: var(--gold);
+    color: var(--white);
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s;
+    align-self: flex-start;
+}
+
+.btn-submit:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139,105,20,0.3);
+}
+
+/* ═══════════════════════════════════════════
+   WHATSAPP FLOAT
+   ═══════════════════════════════════════════ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.45);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+    background: #1a1a1a;
+    color: rgba(255,255,255,0.5);
+    padding: 3rem 2rem;
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.footer-logo span {
+    color: var(--gold);
+}
+
+.footer p {
+    font-size: 0.8rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.footer-links a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        flex-direction: column;
+        background: var(--white);
+        padding: 5rem 2rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-links a {
+        color: var(--charcoal) !important;
+        font-size: 0.95rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    section {
+        padding: 4.5rem 1.5rem;
+    }
+
+    .intro .container,
+    .location .container,
+    .contact .container,
+    .renovation .container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .amenities-list {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 200px);
+    }
+
+    .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .gallery-item:nth-child(4) {
+        grid-column: span 2;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .unique-banner .container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav class="nav" id="nav">
+    <a href="#" class="nav-logo">Mar <span>Bella</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#instalaciones">Instalaciones</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#ubicacion">Ubicacion</a></li>
+        <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-particles">
+        <div class="hero-particle" style="left:10%;top:20%;animation-delay:0s;"></div>
+        <div class="hero-particle" style="left:25%;top:60%;animation-delay:2s;"></div>
+        <div class="hero-particle" style="left:55%;top:30%;animation-delay:4s;"></div>
+        <div class="hero-particle" style="left:75%;top:70%;animation-delay:6s;"></div>
+        <div class="hero-particle" style="left:85%;top:15%;animation-delay:8s;"></div>
+        <div class="hero-particle" style="left:40%;top:80%;animation-delay:3s;"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-badge">Torrevieja &middot; Junto al Mediterraneo</div>
+        <h1>Mas de 30 anos cuidando con <em>carino</em></h1>
+        <p class="hero-subtitle">La unica residencia de mayores frente al mar en Torrevieja. Atencion personalizada, recien reformada y con el mejor equipo profesional a su servicio.</p>
+        <div class="hero-actions">
+            <a href="#contacto" class="btn-primary">Solicitar Visita</a>
+            <a href="tel:+34965710828" class="btn-secondary">Llamar Ahora</a>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        Descubrir
+        <div class="line"></div>
+    </div>
+</section>
+
+<!-- ═══════════ UNIQUE VALUE BANNER ═══════════ -->
+<div class="unique-banner">
+    <div class="container">
+        <div class="unique-item reveal">
+            <div class="icon">&#127754;</div>
+            <div>
+                <h4>Frente al mar</h4>
+                <p>Vistas al Mediterraneo</p>
+            </div>
+        </div>
+        <div class="unique-item reveal reveal-delay-1">
+            <div class="icon">&#11088;</div>
+            <div>
+                <h4>Unica en la zona</h4>
+                <p>La unica residencia junto al mar</p>
+            </div>
+        </div>
+        <div class="unique-item reveal reveal-delay-2">
+            <div class="icon">&#128736;</div>
+            <div>
+                <h4>Recien reformada</h4>
+                <p>Instalaciones totalmente renovadas</p>
+            </div>
+        </div>
+        <div class="unique-item reveal reveal-delay-3">
+            <div class="icon">&#128150;</div>
+            <div>
+                <h4>Trato personalizado</h4>
+                <p>Ratio 1 profesional cada 4 residentes</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ INTRO / ABOUT ═══════════ -->
+<section class="intro" id="nosotros">
+    <div class="container">
+        <div class="intro-image reveal">
+            <img src="https://gransliving-backoffice.s3.eu-west-3.amazonaws.com/residencias/10266/fachada-marbella.jpg" alt="Fachada de la Residencia Mar Bella en Torrevieja" loading="lazy">
+            <div class="intro-image-label">
+                <h4>Desde 1994 en Torrevieja</h4>
+                <p>Mas de 30 anos de confianza y excelencia</p>
+            </div>
+        </div>
+        <div class="intro-text">
+            <span class="section-label reveal">Sobre Nosotros</span>
+            <h2 class="section-title reveal reveal-delay-1">Algo mas que una <em>residencia</em></h2>
+            <p class="section-subtitle reveal reveal-delay-2">El Centro de Mayores Mar Bella nacio en 1994 con una mision clara: ofrecer a nuestros mayores un hogar donde sentirse queridos, atendidos y seguros. Ubicados en un enclave privilegiado junto al Mediterraneo, nuestro equipo de mas de 22 profesionales garantiza atencion medica, bienestar emocional y una vida social activa para cada residente.</p>
+            <div class="intro-stats reveal reveal-delay-3">
+                <div>
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Anos de experiencia</div>
+                </div>
+                <div>
+                    <div class="stat-number">22</div>
+                    <div class="stat-label">Profesionales en plantilla</div>
+                </div>
+                <div>
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Plazas residenciales</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ SERVICES ═══════════ -->
+<section class="services" id="servicios">
+    <div class="container">
+        <div class="services-header">
+            <span class="section-label reveal">Nuestros Servicios</span>
+            <h2 class="section-title reveal reveal-delay-1">Atencion integral y <em>personalizada</em></h2>
+            <p class="section-subtitle reveal reveal-delay-2">Cada residente recibe un plan de cuidados adaptado a sus necesidades especificas.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">&#9764;</div>
+                <h3>Atencion Medica 24h</h3>
+                <p>Servicio medico con visitas regulares, enfermeria permanente y sistema de alerta 24 horas. Coordinacion con especialistas externos y control de medicacion personalizado.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-icon">&#129468;</div>
+                <h3>Fisioterapia y Rehabilitacion</h3>
+                <p>Fisioterapeutas especializados en geriatria. Programas de rehabilitacion personalizados, ejercicios de mantenimiento funcional, prevencion de caidas y gimnasia diaria.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-icon">&#129504;</div>
+                <h3>Estimulacion Cognitiva</h3>
+                <p>Programas especializados en cuidados de la memoria. Talleres de estimulacion cognitiva, atencion psicologica y actividades disenadas para mantener la mente activa.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-icon">&#129462;</div>
+                <h3>Podologia</h3>
+                <p>Servicio regular de podologia especializada para el cuidado integral de los pies, fundamental para la movilidad y el bienestar de nuestros residentes.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-icon">&#127860;</div>
+                <h3>Cocina Propia</h3>
+                <p>Cocina propia con menus caseros elaborados diariamente. Dietas personalizadas segun las necesidades nutricionales de cada residente. Productos frescos y de calidad.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-3">
+                <div class="service-icon">&#127917;</div>
+                <h3>Animacion Sociocultural</h3>
+                <p>Programa diario de actividades dirigido por un TASOC profesional: talleres, excursiones, celebraciones, juegos, musicoterapia y mucho mas para una vida social activa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ RENOVATION ═══════════ -->
+<section class="renovation" id="reforma">
+    <div class="container">
+        <div class="renovation-content">
+            <span class="section-label reveal">Recien Reformada</span>
+            <h2 class="section-title reveal reveal-delay-1">Instalaciones <em>totalmente renovadas</em></h2>
+            <p class="section-subtitle reveal reveal-delay-2">Hemos renovado completamente nuestras instalaciones para ofrecer el maximo confort y seguridad a nuestros residentes.</p>
+            <div class="renovation-features">
+                <div class="renovation-feature reveal reveal-delay-1">
+                    <div class="rf-icon">&#128161;</div>
+                    <div>
+                        <h4>Habitaciones renovadas</h4>
+                        <p>Individuales y dobles, con TV, telefono y terraza con vistas al mar</p>
+                    </div>
+                </div>
+                <div class="renovation-feature reveal reveal-delay-2">
+                    <div class="rf-icon">&#9855;</div>
+                    <div>
+                        <h4>Accesibilidad total</h4>
+                        <p>Banos adaptados, ascensor y espacios sin barreras en las tres plantas</p>
+                    </div>
+                </div>
+                <div class="renovation-feature reveal reveal-delay-3">
+                    <div class="rf-icon">&#127777;</div>
+                    <div>
+                        <h4>Climatizacion moderna</h4>
+                        <p>Sistema de climatizacion eficiente para confort durante todo el ano</p>
+                    </div>
+                </div>
+                <div class="renovation-feature reveal reveal-delay-4">
+                    <div class="rf-icon">&#128274;</div>
+                    <div>
+                        <h4>Seguridad integral</h4>
+                        <p>Sistemas de emergencia y monitorizacion en todas las estancias</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="renovation-image reveal">
+            <img src="https://gransliving-backoffice.s3.eu-west-3.amazonaws.com/residencias/10266/habitacion-marbella.jpg" alt="Habitacion renovada de la Residencia Mar Bella" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ AMENITIES ═══════════ -->
+<section class="amenities" id="instalaciones">
+    <div class="container">
+        <div class="amenities-header">
+            <span class="section-label reveal">Instalaciones</span>
+            <h2 class="section-title reveal reveal-delay-1">Disenadas para el <em>confort y bienestar</em></h2>
+            <p class="section-subtitle reveal reveal-delay-2">Tres plantas equipadas con todo lo necesario para una vida comoda y segura.</p>
+        </div>
+        <div class="amenities-list">
+            <div class="amenity-item reveal">
+                <div class="amenity-icon">&#127968;</div>
+                <div>
+                    <h4>Habitaciones con Vistas al Mar</h4>
+                    <p>Habitaciones individuales y dobles, luminosas, con terraza privada y vistas al Mediterraneo. TV y telefono en cada habitacion.</p>
+                </div>
+            </div>
+            <div class="amenity-item reveal reveal-delay-1">
+                <div class="amenity-icon">&#127754;</div>
+                <div>
+                    <h4>Terraza Panoramica</h4>
+                    <p>Espectacular terraza con vistas al mar donde disfrutar del clima privilegiado de Torrevieja durante todo el ano.</p>
+                </div>
+            </div>
+            <div class="amenity-item reveal reveal-delay-2">
+                <div class="amenity-icon">&#127869;</div>
+                <div>
+                    <h4>Comedor y Cocina Propia</h4>
+                    <p>Amplio comedor en planta baja con cocina propia. Menus caseros diarios adaptados a cada residente.</p>
+                </div>
+            </div>
+            <div class="amenity-item reveal reveal-delay-3">
+                <div class="amenity-icon">&#128218;</div>
+                <div>
+                    <h4>Salones y Zonas Comunes</h4>
+                    <p>Varios salones con television, zona de lectura, sala multiusos para actividades y cafeteria.</p>
+                </div>
+            </div>
+            <div class="amenity-item reveal reveal-delay-2">
+                <div class="amenity-icon">&#128137;</div>
+                <div>
+                    <h4>Consulta Medica</h4>
+                    <p>Consultas medicas propias, sala de enfermeria equipada y farmacia interna para atencion inmediata.</p>
+                </div>
+            </div>
+            <div class="amenity-item reveal reveal-delay-3">
+                <div class="amenity-icon">&#127947;</div>
+                <div>
+                    <h4>Gimnasio Terapeutico</h4>
+                    <p>Sala de fisioterapia y gimnasio equipado para rehabilitacion y sesiones de gimnasia diaria adaptada.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ GALLERY ═══════════ -->
+<section class="gallery" id="galeria">
+    <div class="container">
+        <div class="gallery-header">
+            <span class="section-label reveal">Galeria</span>
+            <h2 class="section-title reveal reveal-delay-1">Conoce nuestro <em>hogar</em></h2>
+            <p class="section-subtitle reveal reveal-delay-2">Un recorrido visual por nuestras instalaciones y el dia a dia de nuestros residentes.</p>
+        </div>
+        <div class="gallery-grid reveal">
+            <div class="gallery-item">
+                <img src="https://gransliving-backoffice.s3.eu-west-3.amazonaws.com/residencias/10266/entorno-marbella.jpg" alt="Entorno mediterraneo de la Residencia Mar Bella" loading="lazy">
+                <div class="gallery-overlay"><span>Entorno Mediterraneo</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gransliving-backoffice.s3.eu-west-3.amazonaws.com/residencias/10266/habitacion-marbella.jpg" alt="Habitacion de la Residencia Mar Bella" loading="lazy">
+                <div class="gallery-overlay"><span>Habitaciones Renovadas</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gransliving-backoffice.s3.eu-west-3.amazonaws.com/residencias/10266/fachada-marbella.jpg" alt="Fachada de la Residencia Mar Bella" loading="lazy">
+                <div class="gallery-overlay"><span>Nuestra Fachada</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://gransliving-backoffice.s3.eu-west-3.amazonaws.com/residencias/10266/comedor-marbella.jpg" alt="Comedor de la Residencia Mar Bella" loading="lazy">
+                <div class="gallery-overlay"><span>Comedor</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ TESTIMONIALS ═══════════ -->
+<section class="testimonials">
+    <div class="container">
+        <div class="testimonials-header">
+            <span class="section-label reveal">Testimonios</span>
+            <h2 class="section-title reveal reveal-delay-1">Lo que dicen las <em>familias</em></h2>
+            <p class="section-subtitle reveal reveal-delay-2">La confianza de quienes nos eligen es nuestro mayor reconocimiento.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <blockquote>Desde que mi madre esta en Mar Bella, la vemos mas feliz y activa que nunca. El trato del personal es exquisito, la conocen por su nombre y saben exactamente lo que necesita. Las vistas al mar son un regalo diario.</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MG</div>
+                    <div class="testimonial-author-info">
+                        <h5>Maria Garcia</h5>
+                        <p>Hija de residente</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal reveal-delay-1">
+                <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <blockquote>La comida casera es espectacular, el equipo medico es de primer nivel y la fisioterapia ha mejorado mucho la movilidad de mi padre. Buscamos mucho y Mar Bella fue sin duda la mejor eleccion.</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JL</div>
+                    <div class="testimonial-author-info">
+                        <h5>Javier Lopez</h5>
+                        <p>Hijo de residente</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal reveal-delay-2">
+                <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <blockquote>La diferencia de Mar Bella esta en el trato personalizado. Conocen a cada residente, sus gustos, sus necesidades. Tras la reforma, las instalaciones estan impecables. Estamos muy tranquilos sabiendo que esta en las mejores manos.</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">CR</div>
+                    <div class="testimonial-author-info">
+                        <h5>Carmen Rodriguez</h5>
+                        <p>Familiar de residente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ LOCATION ═══════════ -->
+<section class="location" id="ubicacion">
+    <div class="container">
+        <div class="location-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.5!2d-0.6835!3d37.9750!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63a9e5c88f8c67%3A0x4e91f5c0a3e7bf12!2sAv.%20Alfredo%20Nobel%2C%208%2C%2003183%20Torrevieja%2C%20Alicante!5e0!3m2!1ses!2ses!4v1710000000000!5m2!1ses!2ses" allowfullscreen loading="lazy" title="Mapa de ubicacion de Residencia Mar Bella en Torrevieja"></iframe>
+        </div>
+        <div class="location-details">
+            <span class="section-label reveal">Ubicacion Privilegiada</span>
+            <h2 class="section-title reveal reveal-delay-1">Junto al <em>Mediterraneo</em></h2>
+            <div class="location-item reveal reveal-delay-2">
+                <div class="location-icon">&#128205;</div>
+                <div>
+                    <h4>Direccion</h4>
+                    <p>Avda. Alfredo Nobel, 8<br>03183 Torrevieja, Alicante</p>
+                </div>
+            </div>
+            <div class="location-item reveal reveal-delay-3">
+                <div class="location-icon">&#9728;</div>
+                <div>
+                    <h4>Clima Privilegiado</h4>
+                    <p>320 dias de sol al ano. Torrevieja esta declarada por la OMS como una de las ciudades con mejor clima del mundo para la salud.</p>
+                </div>
+            </div>
+            <div class="location-item reveal reveal-delay-4">
+                <div class="location-icon">&#9992;</div>
+                <div>
+                    <h4>Excelentes Conexiones</h4>
+                    <p>A 25 minutos del aeropuerto de Alicante-Elche. Autopista AP-7 y a 10 minutos del centro de Torrevieja.</p>
+                </div>
+            </div>
+            <a href="https://www.google.com/maps/dir//Av.+Alfredo+Nobel,+8,+03183+Torrevieja,+Alicante" target="_blank" rel="noopener" class="btn-directions reveal reveal-delay-4">
+                &#128663; Como Llegar
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="contact" id="contacto">
+    <div class="container">
+        <div>
+            <span class="section-label reveal">Contacto</span>
+            <h2 class="section-title reveal reveal-delay-1">Hablemos del bienestar de su <em>ser querido</em></h2>
+            <p class="section-subtitle reveal reveal-delay-2">Concierte una visita sin compromiso. Nuestro equipo le atendera personalmente para resolver todas sus dudas.</p>
+            <div class="contact-info reveal reveal-delay-3">
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">&#128222;</div>
+                    <p><a href="tel:+34965710828">965 710 828</a> / <a href="tel:+34677919951">677 919 951</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">&#128231;</div>
+                    <p><a href="mailto:residencia@residenciamarbella.com">residencia@residenciamarbella.com</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">&#128205;</div>
+                    <p>Avda. Alfredo Nobel, 8<br>03183 Torrevieja, Alicante</p>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">&#128338;</div>
+                    <p>Visitas: Todos los dias, 10:00 - 20:00</p>
+                </div>
+            </div>
+        </div>
+        <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="tel" placeholder="Telefono">
+            </div>
+            <input type="email" placeholder="Email" required>
+            <select required title="Seleccione su interes">
+                <option value="" disabled selected>Me interesa...</option>
+                <option value="visita">Concertar una visita</option>
+                <option value="info">Informacion general</option>
+                <option value="plaza">Disponibilidad de plazas</option>
+                <option value="precios">Tarifas y precios</option>
+                <option value="otro">Otra consulta</option>
+            </select>
+            <textarea placeholder="Cuentenos sobre su familiar y como podemos ayudarle..."></textarea>
+            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+        </form>
+    </div>
+</section>
+
+<!-- ═══════════ WHATSAPP FLOAT ═══════════ -->
+<a href="https://wa.me/34677919951?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20la%20Residencia%20Mar%20Bella" target="_blank" rel="noopener" class="whatsapp-float" title="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-logo">Mar <span>Bella</span></div>
+        <p>&copy; 2025 Centro de Mayores Mar Bella. Todos los derechos reservados.</p>
+        <ul class="footer-links">
+            <li><a href="#">Aviso Legal</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Cookies</a></li>
+        </ul>
+    </div>
+</footer>
+
+<!-- ═══════════ JAVASCRIPT ═══════════ -->
+<script>
+// Navigation scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// Mobile nav toggle
+function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+}
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+    });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Form handling
+function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-submit');
+    const originalText = btn.textContent;
+    btn.textContent = 'Enviado correctamente';
+    btn.style.background = '#87A878';
+    setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        e.target.reset();
+    }, 3000);
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
