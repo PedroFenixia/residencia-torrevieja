@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de Mayores Mar Bella — Presentasjon for Den Norske Klubben Costa Blanca</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --gold: #D4A017;
+    --gold-light: #F0C040;
+    --gold-dark: #B8860B;
+    --cream: #FAF6EF;
+    --cream-dark: #F0E8D8;
+    --charcoal: #2C2C2C;
+    --charcoal-light: #4A4A4A;
+    --white: #FFFFFF;
+    --sea-blue: #1B4965;
+    --sea-medium: #2D6A8F;
+    --sea-light: #5FA8D3;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    color: var(--charcoal);
+    background: #f0f0f0;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 60px rgba(0,0,0,0.08);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--sea-blue) 0%, var(--sea-medium) 100%);
+    padding: 3rem 3rem 2.5rem;
+    color: var(--white);
+    position: relative;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--gold-dark));
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold-light);
+}
+.brand-sub {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 400;
+    margin-top: 0.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.header-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    text-align: center;
+    line-height: 1.4;
+}
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+.header .subtitle {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+}
+
+.hero-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.content {
+    padding: 3rem;
+}
+.content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--sea-blue);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--sea-blue);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.content p {
+    margin-bottom: 1rem;
+    color: var(--charcoal-light);
+    font-size: 0.95rem;
+}
+.content ul {
+    margin-bottom: 1.25rem;
+    padding-left: 0;
+    list-style: none;
+}
+.content ul li {
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+    color: var(--charcoal-light);
+    font-size: 0.95rem;
+}
+.content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.greeting {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 0 8px 8px 0;
+}
+.greeting p {
+    color: var(--charcoal);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+.greeting p:last-child { margin-bottom: 0; }
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 0;
+    gap: 1rem;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+}
+.divider span {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+.stats-row {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+.stat-card {
+    flex: 1;
+    background: var(--cream);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--cream-dark);
+}
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    display: block;
+}
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--charcoal-light);
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Pricing table */
+.pricing-section {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+}
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.pricing-table th {
+    background: var(--sea-blue);
+    color: var(--white);
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.pricing-table th:first-child {
+    border-radius: 8px 0 0 0;
+}
+.pricing-table th:last-child {
+    border-radius: 0 8px 0 0;
+}
+.pricing-table td {
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    color: var(--charcoal-light);
+    border-bottom: 1px solid var(--cream-dark);
+}
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+.pricing-table tr:nth-child(even) td {
+    background: rgba(255,255,255,0.5);
+}
+.price-highlight {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--gold-dark);
+    font-size: 1.05rem;
+}
+.pricing-note {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--charcoal-light);
+    font-style: italic;
+}
+
+/* Invite box */
+.invite-box {
+    background: linear-gradient(135deg, var(--sea-blue) 0%, var(--sea-medium) 100%);
+    color: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+.invite-box h2 {
+    color: var(--gold-light);
+    margin-bottom: 1.25rem;
+}
+.invite-box p {
+    color: rgba(255,255,255,0.9);
+}
+.invite-box ul li {
+    color: rgba(255,255,255,0.9);
+}
+.invite-box ul li::before {
+    background: var(--gold-light);
+}
+
+/* Proposal cards */
+.proposal-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 2rem 0;
+}
+.proposal-card {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 1.75rem;
+    border: 1px solid var(--cream-dark);
+    transition: transform 0.2s;
+}
+.proposal-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.proposal-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+}
+.proposal-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    padding: 2.5rem 3rem;
+    text-align: center;
+}
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.cta-section p {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer {
+    background: var(--sea-blue);
+    color: var(--white);
+    padding: 2.5rem 3rem;
+}
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.footer-col p, .footer-col a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    text-decoration: none;
+}
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+}
+
+@media print {
+    body { background: white; }
+    .container { box-shadow: none; max-width: 100%; }
+    .header, .invite-box, .cta-section, .footer {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .pricing-table th {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .hero-image { height: 200px; }
+}
+
+@media (max-width: 600px) {
+    .content { padding: 2rem 1.5rem; }
+    .header { padding: 2rem 1.5rem; }
+    .stats-row { flex-direction: column; }
+    .gallery { grid-template-columns: 1fr; }
+    .proposal-cards { grid-template-columns: 1fr; }
+    .footer-grid { flex-direction: column; }
+    .header-top { flex-direction: column; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="header-top">
+            <div>
+                <div class="brand">Mar Bella</div>
+                <div class="brand-sub">Centro de Mayores &bull; Torrevieja</div>
+            </div>
+            <div class="header-badge">F&oslash;rste sj&oslash;linje<br>Nylig totalrenovert</div>
+        </div>
+        <h1>Presentasjon for Den Norske Klubben Costa Blanca</h1>
+        <div class="subtitle">Den eneste luksuri&oslash;se eldreresidensen ved Middelhavet i Torrevieja</div>
+    </div>
+
+    <img src="../img/amanecer-hd.jpg" alt="Soloppgang over Middelhavet sett fra Mar Bella" class="hero-image">
+
+    <div class="content">
+
+        <div class="greeting">
+            <p>Kj&aelig;re Den Norske Klubben Costa Blanca,</p>
+            <p>Med over 20 000 nordmenn bosatt i Torrevieja-omr&aring;det, er det norske milj&oslash;et p&aring; Costa Blanca et av de st&oslash;rste i Spania. Vi i Mar Bella &oslash;nsker &aring; presentere oss for klubbens medlemmer som den fremste muligheten for eldreomsorg i regionen &mdash; en residens som kombinerer luksus, beliggenhet og ekte omsorg.</p>
+        </div>
+
+        <h2>Mar Bella &mdash; Torreviejas eneste luksusresidens ved havet</h2>
+        <p>Centro de Mayores Mar Bella ligger i f&oslash;rste sj&oslash;linje i Torrevieja med direkte utsikt over Middelhavet. Grunnlagt i 1994 og nylig totalrenovert, er vi den eneste eldreresidensen i Torrevieja som kan tilby en slik eksklusiv beliggenhet kombinert med over 30 &aring;rs erfaring innen profesjonell eldreomsorg.</p>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">&aring;rs erfaring</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">45</span>
+                <span class="stat-label">plasser</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">40%</span>
+                <span class="stat-label">internasjonale</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">1.</span>
+                <span class="stat-label">sj&oslash;linje</span>
+            </div>
+        </div>
+
+        <h2>Hva vi tilbyr</h2>
+        <ul>
+            <li>Medisinsk tilsyn og sykepleie <strong>24 timer i d&oslash;gnet</strong></li>
+            <li>Fysioterapi, rehabilitering og treningsprogram</li>
+            <li>Kognitiv stimulering og aktivitetsprogram</li>
+            <li>Fotpleie (podologi)</li>
+            <li>Eget kj&oslash;kken med frisk middelhavsmat, tilpasset individuelle behov og dietter</li>
+            <li>Rikt sosialt program med aktiviteter og underholdning</li>
+            <li>Enest&aring;ende beliggenhet &mdash; sjøutsikt og strandnærhet</li>
+            <li>22 dedikerte ansatte for 45 beboere &mdash; personlig oppf&oslash;lging</li>
+        </ul>
+
+        <div class="gallery">
+            <img src="../img/fachadacerca-hd.jpg" alt="Mar Bella fasade">
+            <img src="../img/cala-hd.jpg" alt="Stranden ved Mar Bella">
+            <img src="../img/amanecer-hd.jpg" alt="Soloppgang fra Mar Bella">
+            <img src="../img/fachadagrande-hd.jpg" alt="Mar Bella hovedbygning">
+        </div>
+
+        <div class="divider"><span>&diams;</span></div>
+
+        <!-- Pricing -->
+        <div class="pricing-section">
+            <h2>Priser og inkluderte tjenester</h2>
+            <p>Alle v&aring;re priser inkluderer full pensjon, 24-timers medisinsk tilsyn, daglige aktiviteter og alle grunnleggende tjenester. Ingen overraskelser &mdash; alt er inkludert.</p>
+
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Romtype</th>
+                        <th>M&aring;nedspris</th>
+                        <th>Inkludert</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Delt rom</td>
+                        <td><span class="price-highlight">fra 3 200 &euro;/mnd</span></td>
+                        <td>Full pensjon, medisinsk tilsyn 24t, aktiviteter, renhold</td>
+                    </tr>
+                    <tr>
+                        <td>Enkeltrom</td>
+                        <td><span class="price-highlight">pris p&aring; foresp&oslash;rsel</span></td>
+                        <td>Alt ovenfor + privat rom, ekstra privatliv</td>
+                    </tr>
+                    <tr>
+                        <td>Enkeltrom med sj&oslash;utsikt</td>
+                        <td><span class="price-highlight">pris p&aring; foresp&oslash;rsel</span></td>
+                        <td>Alt ovenfor + panoramautsikt over Middelhavet</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="pricing-note">Tilleggstjenester som fysioterapi, fotpleie og spesialtilpassede dietter er tilgjengelig. Kontakt oss for et skreddersydd tilbud. Pr&oslash;veopphold er mulig.</p>
+        </div>
+
+        <div class="divider"><span>&diams;</span></div>
+
+        <!-- Proposals -->
+        <h2>V&aring;re forslag til klubben</h2>
+        <p>Vi &oslash;nsker &aring; bygge en varig relasjon med Den Norske Klubben og foresl&aring;r f&oslash;lgende:</p>
+
+        <div class="proposal-cards">
+            <div class="proposal-card">
+                <div class="proposal-card-icon">&#127908;</div>
+                <h3>Presentasjon p&aring; klubbm&oslash;te</h3>
+                <p>Vi holder gjerne en kort presentasjon p&aring; et av klubbens m&oslash;ter om eldreomsorg p&aring; Costa Blanca og v&aring;re tjenester.</p>
+            </div>
+            <div class="proposal-card">
+                <div class="proposal-card-icon">&#128240;</div>
+                <h3>Informasjon i nyhetsbrevet</h3>
+                <p>Vi leverer gjerne en artikkel eller annonse til klubbens nyhetsbrev med relevant informasjon for medlemmene.</p>
+            </div>
+            <div class="proposal-card">
+                <div class="proposal-card-icon">&#127969;</div>
+                <h3>&Aring;pent hus for medlemmer</h3>
+                <p>Vi inviterer klubbens medlemmer til en eksklusiv &aring;pen dag med omvisning, forfriskninger og mulighet til &aring; m&oslash;te v&aring;rt team.</p>
+            </div>
+            <div class="proposal-card">
+                <div class="proposal-card-icon">&#129309;</div>
+                <h3>L&oslash;pende samarbeid</h3>
+                <p>Vi &oslash;nsker &aring; v&aelig;re klubbens foretrukne kontakt for sp&oslash;rsm&aring;l om eldreomsorg fra medlemmer og deres familier.</p>
+            </div>
+        </div>
+
+        <div class="invite-box">
+            <h2>Invitasjon til bes&oslash;k</h2>
+            <p>Vi inviterer styret i Den Norske Klubben til en personlig omvisning p&aring; Mar Bella. Kom og se selv hvorfor vi er den foretrukne eldreresidensen for internasjonale familier i Torrevieja.</p>
+            <ul>
+                <li>Omvisning i alle fasiliteter, inkludert rommene, fellesarealene og kj&oslash;kkenet</li>
+                <li>M&oslash;t direkt&oslash;ren Jes&uacute;s Valverde og v&aring;rt profesjonelle team</li>
+                <li>Smak p&aring; v&aring;r middelhavsmat fra eget kj&oslash;kken</li>
+                <li>Mulighet til &aring; snakke med n&aring;v&aelig;rende beboere og deres familier</li>
+            </ul>
+            <p>Vi er tilgjengelige alle dager etter avtale. Bare ring eller send en e-post!</p>
+        </div>
+
+    </div>
+
+    <div class="cta-section">
+        <h2>Book en omvisning i dag</h2>
+        <p>Ring oss eller send en e-post for &aring; avtale en uforpliktende omvisning. Vi ser frem til &aring; &oslash;nske dere velkommen!</p>
+    </div>
+
+    <div class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p>
+                    Jes&uacute;s Valverde Motos, direkt&oslash;r<br>
+                    <a href="tel:+34965710828">+34 965 710 828</a><br>
+                    <a href="tel:+34677919951">+34 677 919 951</a><br>
+                    <a href="mailto:residencia@residenciamarbella.com">residencia@residenciamarbella.com</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Adresse</h4>
+                <p>
+                    Centro de Mayores Mar Bella<br>
+                    Avda. Alfredo Nobel, 8<br>
+                    03183 Torrevieja, Alicante<br>
+                    Spania
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Praktisk info</h4>
+                <p>
+                    25 min fra Alicante flyplass<br>
+                    Direktefly Oslo/Bergen &ndash; Alicante (2,5 t)<br>
+                    320 soldager i &aring;ret
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Centro de Mayores Mar Bella &bull; Eier: Mar&iacute;a &Aacute;ngeles Motos Garc&iacute;a &bull; Grunnlagt 1994
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

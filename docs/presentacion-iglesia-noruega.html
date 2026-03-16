@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de Mayores Mar Bella — Presentasjon for Den Norske Sjømannskirken</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --gold: #D4A017;
+    --gold-light: #F0C040;
+    --gold-dark: #B8860B;
+    --cream: #FAF6EF;
+    --cream-dark: #F0E8D8;
+    --charcoal: #2C2C2C;
+    --charcoal-light: #4A4A4A;
+    --white: #FFFFFF;
+    --sea-blue: #1B4965;
+    --sea-medium: #2D6A8F;
+    --sea-light: #5FA8D3;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    color: var(--charcoal);
+    background: #f0f0f0;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 60px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--sea-blue) 0%, var(--sea-medium) 100%);
+    padding: 3rem 3rem 2.5rem;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--gold-dark));
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+}
+.brand-sub {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 400;
+    margin-top: 0.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.header-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    text-align: center;
+    line-height: 1.4;
+}
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+.header .subtitle {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+}
+
+/* Hero Image */
+.hero-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Content */
+.content {
+    padding: 3rem;
+}
+.content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--sea-blue);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--sea-blue);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.content p {
+    margin-bottom: 1rem;
+    color: var(--charcoal-light);
+    font-size: 0.95rem;
+}
+.content ul {
+    margin-bottom: 1.25rem;
+    padding-left: 0;
+    list-style: none;
+}
+.content ul li {
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+    color: var(--charcoal-light);
+    font-size: 0.95rem;
+}
+.content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+/* Greeting */
+.greeting {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 0 8px 8px 0;
+}
+.greeting p {
+    color: var(--charcoal);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+.greeting p:last-child { margin-bottom: 0; }
+
+/* Section divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 0;
+    gap: 1rem;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+}
+.divider span {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+/* Challenge box */
+.challenge-box {
+    background: linear-gradient(135deg, var(--sea-blue) 0%, var(--sea-medium) 100%);
+    color: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+.challenge-box h2 {
+    color: var(--gold-light);
+    margin-bottom: 1.25rem;
+}
+.challenge-box p {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+.challenge-box ul li {
+    color: rgba(255,255,255,0.9);
+}
+.challenge-box ul li::before {
+    background: var(--gold-light);
+}
+
+/* Stats row */
+.stats-row {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+.stat-card {
+    flex: 1;
+    background: var(--cream);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--cream-dark);
+}
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    display: block;
+}
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--charcoal-light);
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Image gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Collaboration box */
+.collab-box {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+}
+.collab-box h2 {
+    margin-bottom: 1.25rem;
+}
+.collab-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+}
+.collab-item:last-child { border-bottom: none; }
+.collab-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--white);
+    font-size: 1.1rem;
+}
+.collab-text h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.25rem;
+}
+.collab-text p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* CTA */
+.cta-section {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    padding: 2.5rem 3rem;
+    text-align: center;
+}
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.cta-section p {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--sea-blue);
+    color: var(--white);
+    padding: 2.5rem 3rem;
+}
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.footer-col p, .footer-col a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    text-decoration: none;
+}
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Print */
+@media print {
+    body { background: white; }
+    .container { box-shadow: none; max-width: 100%; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .challenge-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cta-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .hero-image { height: 200px; }
+}
+
+@media (max-width: 600px) {
+    .content { padding: 2rem 1.5rem; }
+    .header { padding: 2rem 1.5rem; }
+    .stats-row { flex-direction: column; }
+    .gallery { grid-template-columns: 1fr; }
+    .footer-grid { flex-direction: column; }
+    .header-top { flex-direction: column; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-top">
+            <div>
+                <div class="brand">Mar Bella</div>
+                <div class="brand-sub">Centro de Mayores &bull; Torrevieja</div>
+            </div>
+            <div class="header-badge">Grunnlagt 1994<br>30+ &aring;rs erfaring</div>
+        </div>
+        <h1>Presentasjon for Den Norske Sj&oslash;mannskirken i Spania</h1>
+        <div class="subtitle">Et samarbeid for omsorg og trygghet for norske pensjonister p&aring; Costa Blanca</div>
+    </div>
+
+    <!-- Hero -->
+    <img src="../img/fachadagrande-hd.jpg" alt="Centro de Mayores Mar Bella &mdash; fasade ved Middelhavet" class="hero-image">
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Greeting -->
+        <div class="greeting">
+            <p>Kj&aelig;re Sj&oslash;mannskirken,</p>
+            <p>Vi henvender oss til dere med dyp respekt for det viktige arbeidet dere gj&oslash;r for det norske milj&oslash;et i Spania. Som den eneste luksuri&oslash;se eldreresidensen ved sj&oslash;fronten i Torrevieja, &oslash;nsker vi &aring; utforske hvordan vi sammen kan st&oslash;tte norske pensjonister som trenger omsorg i sine gylne &aring;r ved Middelhavet.</p>
+        </div>
+
+        <h2>Hvem er vi?</h2>
+        <p>Centro de Mayores Mar Bella er en familiedrevet eldreresidensmed over 30 &aring;rs erfaring, beliggende i f&oslash;rste sj&oslash;linje i Torrevieja. Residensen ble grunnlagt i 1994 av familien Motos-Valverde og har nylig gjennomg&aring;tt en fullstendig renovering for &aring; tilby den h&oslash;yeste standard innen eldreomsorg.</p>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <span class="stat-number">45</span>
+                <span class="stat-label">plasser</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">22</span>
+                <span class="stat-label">ansatte</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">40%</span>
+                <span class="stat-label">internasjonale beboere</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">&aring;rs erfaring</span>
+            </div>
+        </div>
+
+        <p>Vi har allerede norske beboere og forst&aring;r den skandinaviske kulturen, verdiene og forventningene til kvalitetsomsorg. V&aring;re ansatte er vant til &aring; jobbe med internasjonale familier og tilpasser seg individuelle behov.</p>
+
+        <div class="divider"><span>&diams;</span></div>
+
+        <!-- Challenge section -->
+        <div class="challenge-box">
+            <h2>Utfordringen norske pensjonister st&aring;r overfor</h2>
+            <p>Mange nordmenn har valgt Costa Blanca som sitt hjem for alderdommen, tiltrukket av klimaet, livskvaliteten og det norske milj&oslash;et. Men n&aring;r helsen svikter og behovet for omsorg &oslash;ker, st&aring;r de overfor en vanskelig virkelighet:</p>
+            <ul>
+                <li>Utenlandske statsborgere har som regel <strong>ikke tilgang til offentlige spanske sykehjem</strong>, da disse er forbeholdt spanske borgere med begrenset kapasitet</li>
+                <li>Familiene i Norge er langt unna og kan ikke alltid tilby daglig st&oslash;tte</li>
+                <li>Mange &oslash;nsker &aring; bli i Spania &mdash; landet de har valgt som sitt hjem &mdash; men trenger profesjonell hjelp</li>
+                <li>&Aring; flytte tilbake til Norge sent i livet kan v&aelig;re sv&aelig;rt belastende b&aring;de fysisk og psykisk</li>
+                <li>Private omsorgsalternativer i omr&aring;det er f&aring; og sjelden tilpasset skandinavisk kultur</li>
+            </ul>
+            <p>Mar Bella tilbyr en verdig l&oslash;sning: profesjonell omsorg av h&oslash;yeste kvalitet, ved Middelhavet, med forst&aring;else for skandinavisk kultur og levem&aring;te.</p>
+        </div>
+
+        <div class="divider"><span>&diams;</span></div>
+
+        <h2>V&aring;re tjenester</h2>
+        <ul>
+            <li>Medisinsk tilsyn og sykepleie 24 timer i d&oslash;gnet</li>
+            <li>Fysioterapi og rehabilitering</li>
+            <li>Kognitiv stimulering og aktivitetsprogram</li>
+            <li>Fotpleie (podologi)</li>
+            <li>Eget kj&oslash;kken med middelhavsmat tilpasset individuelle behov</li>
+            <li>Sosiale aktiviteter og underholdning</li>
+            <li>Beliggenhet i f&oslash;rste sj&oslash;linje &mdash; utsikt over Middelhavet</li>
+            <li>Nylig totalrenovert med moderne fasiliteter</li>
+        </ul>
+
+        <div class="gallery">
+            <img src="../img/fachadacerca-hd.jpg" alt="Mar Bella fasade p&aring; n&aelig;rt hold">
+            <img src="../img/amanecer-hd.jpg" alt="Soloppgang over Middelhavet fra Mar Bella">
+            <img src="../img/cala-hd.jpg" alt="Stranden ved Mar Bella">
+            <img src="../img/fachadagrande-hd.jpg" alt="Mar Bella hovedbygning">
+        </div>
+
+        <div class="divider"><span>&diams;</span></div>
+
+        <!-- Collaboration proposal -->
+        <div class="collab-box">
+            <h2>Forslag til samarbeid</h2>
+            <p>Vi &oslash;nsker &aring; etablere et meningsfylt samarbeid med Sj&oslash;mannskirken, og foresl&aring;r f&oslash;lgende muligheter:</p>
+
+            <div class="collab-item">
+                <div class="collab-icon">&#9993;</div>
+                <div class="collab-text">
+                    <h3>Brosjyrer og informasjonsmateriell</h3>
+                    <p>Vi &oslash;nsker tillatelse til &aring; plassere v&aring;re brosjyrer p&aring; norsk i kirkens lokaler, slik at de som trenger informasjon om omsorgsmuligheter kan finne det.</p>
+                </div>
+            </div>
+
+            <div class="collab-item">
+                <div class="collab-icon">&#127908;</div>
+                <div class="collab-text">
+                    <h3>Foredrag om eldreomsorg i Spania</h3>
+                    <p>Vi tilbyr &aring; holde et informasjonsforedrag for kirkens menighet om hvilke muligheter norske pensjonister har n&aring;r det gjelder eldreomsorg i Spania &mdash; rettigheter, alternativer og praktisk informasjon.</p>
+                </div>
+            </div>
+
+            <div class="collab-item">
+                <div class="collab-icon">&#129309;</div>
+                <div class="collab-text">
+                    <h3>Henvisningssamarbeid</h3>
+                    <p>Vi stiller oss til disposisjon som en p&aring;litelig ressurs n&aring;r familier eller enkeltpersoner henvender seg til kirken med sp&oslash;rsm&aring;l om omsorgsbehov. Vi tilbyr alltid en uforpliktende omvisning.</p>
+                </div>
+            </div>
+
+            <div class="collab-item">
+                <div class="collab-icon">&#9829;</div>
+                <div class="collab-text">
+                    <h3>Bes&oslash;kstjeneste og fellesskap</h3>
+                    <p>Vi &oslash;nsker gjerne bes&oslash;k fra kirkens frivillige til v&aring;re skandinaviske beboere, og kan ogs&aring; tilby v&aring;re lokaler for sm&aring; samlinger.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2>Vi vil gjerne m&oslash;te dere</h2>
+        <p>Vi inviterer dere hjertelig til en omvisning p&aring; Mar Bella, slik at dere kan se v&aring;re fasiliteter og m&oslash;te v&aring;rt team. Vi er overbevist om at et samarbeid kan gj&oslash;re en reell forskjell for norske pensjonister p&aring; Costa Blanca.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p>
+                    Jes&uacute;s Valverde Motos, direkt&oslash;r<br>
+                    <a href="tel:+34965710828">+34 965 710 828</a><br>
+                    <a href="tel:+34677919951">+34 677 919 951</a><br>
+                    <a href="mailto:residencia@residenciamarbella.com">residencia@residenciamarbella.com</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Adresse</h4>
+                <p>
+                    Centro de Mayores Mar Bella<br>
+                    Avda. Alfredo Nobel, 8<br>
+                    03183 Torrevieja, Alicante<br>
+                    Spania
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Praktisk info</h4>
+                <p>
+                    25 min fra Alicante flyplass<br>
+                    Direktefly Oslo/Bergen &ndash; Alicante (2,5 t)<br>
+                    320 soldager i &aring;ret
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Centro de Mayores Mar Bella &bull; Eier: Mar&iacute;a &Aacute;ngeles Motos Garc&iacute;a &bull; Grunnlagt 1994
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

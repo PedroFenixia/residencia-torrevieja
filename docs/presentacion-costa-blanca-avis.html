@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de Mayores Mar Bella — Presentasjon for Costa Blanca Avis</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --gold: #D4A017;
+    --gold-light: #F0C040;
+    --gold-dark: #B8860B;
+    --cream: #FAF6EF;
+    --cream-dark: #F0E8D8;
+    --charcoal: #2C2C2C;
+    --charcoal-light: #4A4A4A;
+    --white: #FFFFFF;
+    --sea-blue: #1B4965;
+    --sea-medium: #2D6A8F;
+    --sea-light: #5FA8D3;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    color: var(--charcoal);
+    background: #f0f0f0;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 60px rgba(0,0,0,0.08);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--sea-blue) 0%, var(--sea-medium) 100%);
+    padding: 3rem 3rem 2.5rem;
+    color: var(--white);
+    position: relative;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--gold-dark));
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold-light);
+}
+.brand-sub {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 400;
+    margin-top: 0.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.header-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    text-align: center;
+    line-height: 1.4;
+}
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+.header .subtitle {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+}
+
+.hero-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.content {
+    padding: 3rem;
+}
+.content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--sea-blue);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--sea-blue);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.content p {
+    margin-bottom: 1rem;
+    color: var(--charcoal-light);
+    font-size: 0.95rem;
+}
+.content ul {
+    margin-bottom: 1.25rem;
+    padding-left: 0;
+    list-style: none;
+}
+.content ul li {
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+    color: var(--charcoal-light);
+    font-size: 0.95rem;
+}
+.content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.greeting {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 0 8px 8px 0;
+}
+.greeting p {
+    color: var(--charcoal);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+.greeting p:last-child { margin-bottom: 0; }
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 0;
+    gap: 1rem;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+}
+.divider span {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+/* Media proposal cards */
+.media-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 2rem 0;
+}
+.media-card {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 1.75rem;
+    border: 1px solid var(--cream-dark);
+}
+.media-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.media-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+}
+.media-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* Key facts box */
+.facts-box {
+    background: linear-gradient(135deg, var(--sea-blue) 0%, var(--sea-medium) 100%);
+    color: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+.facts-box h2 {
+    color: var(--gold-light);
+    margin-bottom: 1.25rem;
+}
+.facts-box p {
+    color: rgba(255,255,255,0.9);
+}
+.facts-box ul li {
+    color: rgba(255,255,255,0.9);
+}
+.facts-box ul li::before {
+    background: var(--gold-light);
+}
+
+/* Article draft */
+.article-draft {
+    background: var(--white);
+    border: 2px solid var(--cream-dark);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    position: relative;
+}
+.article-draft::before {
+    content: 'ARTIKKELUTKAST';
+    position: absolute;
+    top: -0.75rem;
+    left: 2rem;
+    background: var(--gold);
+    color: var(--white);
+    padding: 0.25rem 1rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.article-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--sea-blue);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+.article-subheadline {
+    font-size: 1rem;
+    color: var(--gold-dark);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+.article-body p {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--charcoal);
+}
+.article-body p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    float: left;
+    line-height: 1;
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
+    color: var(--sea-blue);
+    font-weight: 700;
+}
+.article-pullquote {
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--cream);
+    border-radius: 0 8px 8px 0;
+}
+.article-pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--sea-blue);
+    margin-bottom: 0.25rem;
+}
+.article-pullquote cite {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--charcoal-light);
+}
+.article-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+.article-caption {
+    font-size: 0.78rem;
+    color: var(--charcoal-light);
+    font-style: italic;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+.article-factbox {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+.article-factbox h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--sea-blue);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+.article-factbox ul {
+    margin-bottom: 0;
+}
+.article-factbox ul li {
+    font-size: 0.85rem;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    padding: 2.5rem 3rem;
+    text-align: center;
+}
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.cta-section p {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer {
+    background: var(--sea-blue);
+    color: var(--white);
+    padding: 2.5rem 3rem;
+}
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.footer-col p, .footer-col a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    text-decoration: none;
+}
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+}
+
+@media print {
+    body { background: white; }
+    .container { box-shadow: none; max-width: 100%; }
+    .header, .facts-box, .cta-section, .footer {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .article-draft::before {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .hero-image { height: 200px; }
+}
+
+@media (max-width: 600px) {
+    .content { padding: 2rem 1.5rem; }
+    .header { padding: 2rem 1.5rem; }
+    .media-options { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; }
+    .footer-grid { flex-direction: column; }
+    .header-top { flex-direction: column; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="header-top">
+            <div>
+                <div class="brand">Mar Bella</div>
+                <div class="brand-sub">Centro de Mayores &bull; Torrevieja</div>
+            </div>
+            <div class="header-badge">Pressehenvendelse<br>Mars 2026</div>
+        </div>
+        <h1>Mediepresentasjon for Costa Blanca Avis</h1>
+        <div class="subtitle">Torreviejas eneste luksuri&oslash;se eldreresidens ved Middelhavet &mdash; en historie verdt &aring; fortelle</div>
+    </div>
+
+    <img src="../img/fachadacerca-hd.jpg" alt="Centro de Mayores Mar Bella &mdash; fasade" class="hero-image">
+
+    <div class="content">
+
+        <div class="greeting">
+            <p>Kj&aelig;re redaksjon i Costa Blanca Avis,</p>
+            <p>Vi henvender oss til dere med et forslag om et redaksjonelt samarbeid. Som Norges fremste avis p&aring; Costa Blanca n&aring;r dere akkurat den m&aring;lgruppen som trenger &aring; vite om v&aring;rt tilbud: norske pensjonister og deres familier som st&aring;r overfor sp&oslash;rsm&aring;let om eldreomsorg i Spania.</p>
+        </div>
+
+        <h2>Hvorfor dette er en relevant sak</h2>
+        <p>Stadig flere norske pensjonister p&aring; Costa Blanca n&aring;r en alder der de trenger profesjonell omsorg. Mange &oslash;nsker &aring; bli i Spania &mdash; men har begrenset tilgang til det offentlige spanske omsorgssystemet. Dette er en underkommunisert utfordring som ber&oslash;rer tusenvis av norske familier.</p>
+        <p>Centro de Mayores Mar Bella representerer en unik l&oslash;sning: den eneste luksuri&oslash;se eldreresidensen ved sj&oslash;fronten i Torrevieja, med over 30 &aring;rs erfaring og allerede norske beboere.</p>
+
+        <div class="facts-box">
+            <h2>N&oslash;kkelfakta for redaksjonen</h2>
+            <ul>
+                <li><strong>Eneste i sitt slag:</strong> Den eneste luksuri&oslash;se eldreresidensen i f&oslash;rste sj&oslash;linje i Torrevieja</li>
+                <li><strong>Over 30 &aring;rs erfaring:</strong> Grunnlagt i 1994 av familien Motos-Valverde</li>
+                <li><strong>Nylig totalrenovert:</strong> Moderne fasiliteter med beholdt sjarm</li>
+                <li><strong>40% internasjonale beboere:</strong> Inkludert norske beboere</li>
+                <li><strong>45 plasser, 22 ansatte:</strong> Nesten 1:2 ansatte-til-beboer-ratio</li>
+                <li><strong>Direkt&oslash;r:</strong> Jes&uacute;s Valverde Motos &mdash; tilgjengelig for intervju</li>
+                <li><strong>Eier:</strong> Mar&iacute;a &Aacute;ngeles Motos Garc&iacute;a</li>
+                <li><strong>Beliggenhet:</strong> Avda. Alfredo Nobel, 8, Torrevieja &mdash; 25 min fra Alicante flyplass</li>
+            </ul>
+        </div>
+
+        <div class="divider"><span>&diams;</span></div>
+
+        <h2>V&aring;re forslag til samarbeid</h2>
+        <p>Vi ser flere mulige former for samarbeid med Costa Blanca Avis:</p>
+
+        <div class="media-options">
+            <div class="media-card">
+                <div class="media-card-icon">&#128220;</div>
+                <h3>Sponset artikkel / Advertorial</h3>
+                <p>En informativ artikkel om eldreomsorgsmulighetene for nordmenn i Spania, med Mar Bella som case-studie. Vi leverer gjerne tekst og bilder i h&oslash;y oppl&oslash;sning.</p>
+            </div>
+            <div class="media-card">
+                <div class="media-card-icon">&#127908;</div>
+                <h3>Intervju med direkt&oslash;ren</h3>
+                <p>Jes&uacute;s Valverde Motos stiller gjerne til intervju om eldreomsorg i Spania, utfordringene for utenlandske pensjonister, og Mar Bellas visjon.</p>
+            </div>
+            <div class="media-card">
+                <div class="media-card-icon">&#128247;</div>
+                <h3>Reportasje fra residensen</h3>
+                <p>Vi inviterer en journalist til en full omvisning med fotomuligheter. Se selv hvordan hverdagen er for v&aring;re beboere ved Middelhavet.</p>
+            </div>
+            <div class="media-card">
+                <div class="media-card-icon">&#128196;</div>
+                <h3>Fast annonseplass</h3>
+                <p>Vi er &aring;pne for &aring; diskutere l&oslash;pende annonsering i avisen, b&aring;de print og digital, tilpasset deres formater.</p>
+            </div>
+        </div>
+
+        <div class="divider"><span>&diams;</span></div>
+
+        <!-- Ready-to-publish article draft -->
+        <div class="article-draft">
+            <div class="article-headline">Ved Middelhavet, med omsorg: Mar Bella gir norske pensjonister et verdig alternativ i Spania</div>
+            <div class="article-subheadline">Etter 30 &aring;r og en fullstendig renovering er Torreviejas eneste sj&oslash;frontresidens klar for fremtiden</div>
+
+            <div class="article-body">
+                <p>Det er tidlig morgen i Torrevieja. Solen stiger over Middelhavet og kaster et varmt lys inn gjennom vinduene p&aring; Centro de Mayores Mar Bella. Her, i f&oslash;rste sj&oslash;linje, v&aring;kner 45 beboere til en ny dag &mdash; med havet som n&aelig;rmeste nabo og et dedikert team p&aring; 22 ansatte klare til &aring; ta vare p&aring; dem.</p>
+
+                <img src="../img/amanecer-hd.jpg" alt="Soloppgang over Middelhavet fra Mar Bella" class="article-image">
+                <p class="article-caption">Soloppgang sett fra Mar Bella. Residensen ligger i f&oslash;rste sj&oslash;linje i Torrevieja.</p>
+
+                <p>Mar Bella ble grunnlagt i 1994 av familien Motos-Valverde, og har i over tre ti&aring;r v&aelig;rt et trygt hjem for eldre i Torrevieja. I dag, etter en fullstendig renovering, fremst&aring;r residensen som den eneste luksuri&oslash;se eldreresidensen ved sj&oslash;fronten i hele Torrevieja-omr&aring;det.</p>
+
+                <p>&laquo;Vi er ikke bare en residens &mdash; vi er et hjem&raquo;, sier direkt&oslash;r Jes&uacute;s Valverde Motos. &laquo;Mange av v&aring;re beboere er internasjonale, inkludert nordmenn. De har valgt Spania som sitt hjem, og vi gir dem muligheten til &aring; bli her &mdash; med den omsorgen de fortjener.&raquo;</p>
+
+                <div class="article-pullquote">
+                    <p>&laquo;Mange norske pensjonister i Spania st&aring;r overfor et vanskelig valg: flytte tilbake til Norge for omsorg, eller finne en verdig l&oslash;sning her. Vi er den l&oslash;sningen.&raquo;</p>
+                    <cite>&mdash; Jes&uacute;s Valverde Motos, direkt&oslash;r</cite>
+                </div>
+
+                <p>Utfordringen er reell. Utenlandske statsborgere har som regel begrenset eller ingen tilgang til offentlige spanske sykehjem. For nordmenn som har bodd i Spania i &aring;revis &mdash; kanskje &aring;rtier &mdash; kan tanken p&aring; &aring; flytte tilbake til Norge v&aelig;re overveldende. Klimaet, vennene, livet de har bygget opp &mdash; alt ligger her.</p>
+
+                <p>Mar Bella tilbyr full medisinsk oppf&oslash;lging 24 timer i d&oslash;gnet, fysioterapi, kognitiv stimulering, eget kj&oslash;kken med middelhavsmat tilpasset individuelle behov, og et rikt sosialt aktivitetsprogram. Med 40 prosent internasjonale beboere er personalet vant til &aring; jobbe p&aring; tvers av kulturer.</p>
+
+                <img src="../img/fachadagrande-hd.jpg" alt="Mar Bella hovedbygning ved Middelhavet" class="article-image">
+                <p class="article-caption">Mar Bella &mdash; nylig totalrenovert og beliggende i f&oslash;rste sj&oslash;linje i Torrevieja.</p>
+
+                <p>Beliggenheten er vanskelig &aring; sl&aring;. Med 320 soldager i &aring;ret, Middelhavet rett utenfor d&oslash;ren, og bare 25 minutters kj&oslash;ring fra Alicante flyplass, er det enkelt for familier i Norge &aring; komme p&aring; bes&oslash;k. Direktefly fra Oslo og Bergen tar bare to og en halv time.</p>
+
+                <div class="article-factbox">
+                    <h4>Fakta om Mar Bella</h4>
+                    <ul>
+                        <li>Navn: Centro de Mayores Mar Bella</li>
+                        <li>Grunnlagt: 1994 (30+ &aring;r)</li>
+                        <li>Kapasitet: 45 plasser</li>
+                        <li>Ansatte: 22</li>
+                        <li>Beliggenhet: F&oslash;rste sj&oslash;linje, Torrevieja</li>
+                        <li>Priser: Fra 3 200 &euro; per m&aring;ned (alt inkludert)</li>
+                        <li>Kontakt: +34 965 710 828 / residencia@residenciamarbella.com</li>
+                        <li>Adresse: Avda. Alfredo Nobel, 8, 03183 Torrevieja</li>
+                    </ul>
+                </div>
+
+                <p>For norske familier som s&oslash;ker omsorg for sine kj&aelig;re p&aring; Costa Blanca, representerer Mar Bella noe sjeldent: en kombinasjon av profesjonell eldreomsorg, en usl&aring;elig beliggenhet, og genuin varme. Direkt&oslash;r Valverde inviterer alle interesserte til en uforpliktende omvisning.</p>
+
+                <p>&laquo;Kom og se selv&raquo;, sier han. &laquo;Det er den beste m&aring;ten &aring; forst&aring; hva vi tilbyr.&raquo;</p>
+            </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--charcoal-light); font-style: italic;">Artikkelen ovenfor er et utkast som kan redigeres fritt av redaksjonen. H&oslash;yoppl&oslash;selige bilder leveres p&aring; foresp&oslash;rsel. Vi er fleksible n&aring;r det gjelder vinkling og format.</p>
+
+        <div class="divider"><span>&diams;</span></div>
+
+        <h2>Bildemateriell tilgjengelig</h2>
+        <p>Vi har profesjonelle bilder i h&oslash;y oppl&oslash;sning klare til bruk. Her er et utvalg:</p>
+
+        <div class="gallery">
+            <img src="../img/fachadacerca-hd.jpg" alt="Mar Bella fasade n&aelig;rbilde">
+            <img src="../img/amanecer-hd.jpg" alt="Soloppgang ved Mar Bella">
+            <img src="../img/cala-hd.jpg" alt="Stranden nedenfor Mar Bella">
+            <img src="../img/fachadagrande-hd.jpg" alt="Mar Bella i full bredde">
+        </div>
+        <p style="font-size: 0.85rem; color: var(--charcoal-light); font-style: italic; margin-top: 0.5rem;">Alle bilder er tilgjengelige i h&oslash;yere oppl&oslash;sning for trykk. Kontakt oss for bildepakke.</p>
+
+    </div>
+
+    <div class="cta-section">
+        <h2>Vi ser frem til &aring; h&oslash;re fra dere</h2>
+        <p>Kontakt direkt&oslash;r Jes&uacute;s Valverde Motos for &aring; diskutere samarbeidsmuligheter, avtale et intervju, eller bestille en omvisning for journalisten.</p>
+    </div>
+
+    <div class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Pressekontakt</h4>
+                <p>
+                    Jes&uacute;s Valverde Motos, direkt&oslash;r<br>
+                    <a href="tel:+34965710828">+34 965 710 828</a><br>
+                    <a href="tel:+34677919951">+34 677 919 951</a><br>
+                    <a href="mailto:residencia@residenciamarbella.com">residencia@residenciamarbella.com</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Adresse</h4>
+                <p>
+                    Centro de Mayores Mar Bella<br>
+                    Avda. Alfredo Nobel, 8<br>
+                    03183 Torrevieja, Alicante<br>
+                    Spania
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>P&aring; nett</h4>
+                <p>
+                    centromayoresmarbella.com<br>
+                    marbellacarehome.com<br>
+                    25 min fra Alicante flyplass
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Centro de Mayores Mar Bella &bull; Eier: Mar&iacute;a &Aacute;ngeles Motos Garc&iacute;a &bull; Grunnlagt 1994
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
