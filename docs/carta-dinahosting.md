@@ -69,8 +69,8 @@ Por la presente, solicito formalmente:
 3. **Confirmación por escrito** de que el dominio será desbloqueado en un plazo máximo de 5 días naturales, conforme a la política de transferencias de ICANN.
 
 **Datos del titular:**
-- Razón social: [NOMBRE DE LA EMPRESA / AUTÓNOMO]
-- CIF/NIF: [CIF/NIF]
+- Razón social: MARÍA ÁNGELES MOTOS GARCÍA
+- CIF/NIF: 21970355L
 - Domicilio: Avda. Alfredo Nobel, 8, 03183 Torrevieja, Alicante
 - Teléfono de contacto: 965 710 828
 - Email de contacto: residencia@residenciamarbella.com
