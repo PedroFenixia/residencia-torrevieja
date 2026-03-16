@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro Mayores Mar Bella — Luksus Eldresenter ved Middelhavet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f0e8;
+    color: #2c2c2c;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #FAF6EF;
+    box-shadow: 0 0 60px rgba(0,0,0,0.08);
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1B4965 0%, #0d2f42 100%);
+    padding: 40px 40px 30px;
+    text-align: center;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #D4A017, #F0C040);
+    border-radius: 2px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    color: #FAF6EF;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .header .gold-line {
+    color: #F0C040;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  .header .since {
+    color: rgba(250,246,239,0.5);
+    font-size: 11px;
+    margin-top: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(27,73,101,0.85));
+    padding: 60px 40px 28px;
+  }
+  .hero-overlay p {
+    color: #FAF6EF;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* Sections */
+  .section {
+    padding: 45px 40px;
+  }
+  .section-alt {
+    background: #f7f2e8;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #1B4965;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .section h2 span {
+    color: #D4A017;
+  }
+  .gold-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #D4A017, #F0C040);
+    margin: 0 auto 25px;
+    border-radius: 1px;
+  }
+
+  /* Welcome */
+  .welcome p {
+    font-size: 15px;
+    color: #444;
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* Highlights */
+  .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  .highlight-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    border: 1px solid rgba(212,160,23,0.15);
+    transition: box-shadow 0.3s;
+  }
+  .highlight-card:hover {
+    box-shadow: 0 8px 30px rgba(27,73,101,0.08);
+  }
+  .highlight-card .icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .highlight-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #1B4965;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .highlight-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 10px;
+  }
+  .service-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 3px solid #D4A017;
+  }
+  .service-item .s-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .service-item span {
+    font-size: 13.5px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  /* Photo break */
+  .photo-break {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .photo-break img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+    padding: 30px 40px 16px;
+    text-align: right;
+  }
+  .photo-caption span {
+    color: rgba(255,255,255,0.8);
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  /* Prices */
+  .price-box {
+    background: linear-gradient(135deg, #1B4965, #0d2f42);
+    border-radius: 16px;
+    padding: 35px 30px;
+    text-align: center;
+    color: #FAF6EF;
+    margin-bottom: 25px;
+  }
+  .price-box .from {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+  .price-box .amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #F0C040;
+    line-height: 1.1;
+  }
+  .price-box .period {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 4px;
+  }
+  .price-box .note {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 12px;
+    font-style: italic;
+  }
+  .included-list, .extra-list {
+    margin-bottom: 20px;
+  }
+  .included-list h3, .extra-list h3 {
+    font-family: 'Playfair Display', serif;
+    color: #1B4965;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .included-list ul, .extra-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  .included-list li, .extra-list li {
+    padding: 6px 0;
+    font-size: 14px;
+    color: #444;
+    border-bottom: 1px solid rgba(212,160,23,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .included-list li::before {
+    content: "\2713";
+    color: #D4A017;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .extra-list li::before {
+    content: "+";
+    color: #1B4965;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Testimonial */
+  .testimonial {
+    background: linear-gradient(135deg, #1B4965 0%, #163d56 100%);
+    padding: 45px 40px;
+    text-align: center;
+    position: relative;
+  }
+  .testimonial::before {
+    content: "\201C";
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    color: rgba(240,192,64,0.2);
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    line-height: 1;
+  }
+  .testimonial blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #FAF6EF;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .testimonial .author {
+    color: #F0C040;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .testimonial .author-detail {
+    color: rgba(250,246,239,0.6);
+    font-size: 12px;
+    margin-top: 3px;
+  }
+
+  /* Location */
+  .location-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 15px;
+  }
+  .location-info .loc-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+  }
+  .location-info .loc-details p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  .location-info .loc-details strong {
+    color: #1B4965;
+  }
+
+  .flights-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 20px;
+    border: 1px solid rgba(212,160,23,0.2);
+    text-align: center;
+  }
+  .flights-box p {
+    font-size: 14px;
+    color: #444;
+  }
+  .flights-box strong {
+    color: #1B4965;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, #D4A017 0%, #c49315 100%);
+    padding: 45px 40px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  .cta-section .cta-sub {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .cta-btn.phone {
+    background: #1B4965;
+    color: #FAF6EF;
+  }
+  .cta-btn.email {
+    background: #fff;
+    color: #1B4965;
+  }
+  .cta-btn.whatsapp {
+    background: #25D366;
+    color: #fff;
+  }
+  .cta-btn .btn-icon {
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    background: #0d2f42;
+    padding: 35px 40px;
+    text-align: center;
+    color: rgba(250,246,239,0.6);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .footer .footer-name {
+    font-family: 'Playfair Display', serif;
+    color: #F0C040;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .footer a {
+    color: #F0C040;
+    text-decoration: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .header { padding: 30px 24px 24px; }
+    .header h1 { font-size: 22px; }
+    .section { padding: 35px 24px; }
+    .highlights { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero img { height: 220px; }
+    .price-box .amount { font-size: 38px; }
+    .cta-section { padding: 35px 24px; }
+    .testimonial { padding: 35px 24px; }
+    .location-info { flex-direction: column; text-align: center; }
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .wrapper { box-shadow: none; max-width: 100%; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .testimonial { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cta-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .price-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cta-btn:hover { transform: none; box-shadow: none; }
+    .highlight-card:hover { box-shadow: none; }
+    .section { break-inside: avoid; }
+    .photo-break { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Centro Mayores Mar Bella</h1>
+    <div class="gold-line">Luksus Eldresenter ved Middelhavet</div>
+    <div class="since">Siden 1994 &middot; Torrevieja, Spania</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="../img/amanecer-hd.jpg" alt="Soloppgang over Middelhavet fra Mar Bella">
+    <div class="hero-overlay">
+      <p>Der havet m&oslash;ter omsorgen</p>
+    </div>
+  </div>
+
+  <!-- WELCOME -->
+  <div class="section welcome">
+    <h2>Takk for din <span>interesse</span></h2>
+    <div class="gold-divider"></div>
+    <p>
+      Vi er glade for at du vurderer Mar Bella for din kj&aelig;re. Vi forst&aring;r at dette er en av de viktigste avgj&oslash;relsene i livet, og vi &oslash;nsker &aring; gj&oslash;re overgangen s&aring; trygg og behagelig som mulig. P&aring; de neste sidene vil du oppdage hvorfor familier fra hele Skandinavia har valgt oss som sitt hjem ved havet.
+    </p>
+  </div>
+
+  <!-- WHY MAR BELLA -->
+  <div class="section section-alt">
+    <h2>Hvorfor velge <span>Mar Bella</span>?</h2>
+    <div class="gold-divider"></div>
+    <div class="highlights">
+      <div class="highlight-card">
+        <div class="icon">&#127754;</div>
+        <h3>Direkte ved stranden</h3>
+        <p>Det eneste luksuseldresenteret i Torrevieja med utsikt over Middelhavet. V&aring;kn opp til b&oslash;lgeskvulp hver morgen.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">&#127475;&#127476;</div>
+        <h3>Norske beboere</h3>
+        <p>40% internasjonale beboere, inkludert norske. Dine kj&aelig;re vil f&oslash;le seg hjemme med et skandinavisk fellesskap.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">&#10024;</div>
+        <h3>Nylig totalrenovert</h3>
+        <p>Hele anlegget er nylig renovert med moderne fasiliteter, samtidig som vi bevarer den varme, hjemlige atmosf&aelig;ren.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">&#128153;</div>
+        <h3>Omsorg d&oslash;gnet rundt</h3>
+        <p>22 dedikerte ansatte for 45 beboere. Medisinsk personale tilgjengelig 24 timer i d&oslash;gnet, hele &aring;ret.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section">
+    <h2>V&aring;re <span>tjenester</span></h2>
+    <div class="gold-divider"></div>
+    <div class="services-grid">
+      <div class="service-item">
+        <span class="s-icon">&#129657;</span>
+        <span>Legetilsyn 24 timer</span>
+      </div>
+      <div class="service-item">
+        <span class="s-icon">&#128170;</span>
+        <span>Fysioterapi</span>
+      </div>
+      <div class="service-item">
+        <span class="s-icon">&#129504;</span>
+        <span>Kognitiv stimulering</span>
+      </div>
+      <div class="service-item">
+        <span class="s-icon">&#129462;</span>
+        <span>Fotpleie</span>
+      </div>
+      <div class="service-item">
+        <span class="s-icon">&#127858;</span>
+        <span>Middelhavsmat</span>
+      </div>
+      <div class="service-item">
+        <span class="s-icon">&#127926;</span>
+        <span>Aktiviteter &amp; underholdning</span>
+      </div>
+      <div class="service-item">
+        <span class="s-icon">&#128084;</span>
+        <span>Vaskeri &amp; klespleie</span>
+      </div>
+      <div class="service-item">
+        <span class="s-icon">&#127968;</span>
+        <span>Personlige rom</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO: FACADE -->
+  <div class="photo-break">
+    <img src="../img/fachadagrande-hd.jpg" alt="Fasaden til Centro Mayores Mar Bella">
+    <div class="photo-caption">
+      <span>Mar Bella &middot; Torrevieja, Costa Blanca</span>
+    </div>
+  </div>
+
+  <!-- PRICES -->
+  <div class="section">
+    <h2>Priser &amp; <span>inkludert</span></h2>
+    <div class="gold-divider"></div>
+
+    <div class="price-box">
+      <div class="from">FRA</div>
+      <div class="amount">3 200 &euro;</div>
+      <div class="period">per m&aring;ned &middot; alt inkludert</div>
+      <div class="note">Sammenlign med gjennomsnittsprisen p&aring; sykehjem i Norge: 40 000+ kr/mnd</div>
+    </div>
+
+    <div class="included-list">
+      <h3>Inkludert i prisen</h3>
+      <ul>
+        <li>Fullt m&oslash;blert privat rom med bad</li>
+        <li>Full pensjon &mdash; frokost, lunsj, mellomm&aring;ltid og middag</li>
+        <li>Legetilsyn og sykepleie 24 timer i d&oslash;gnet</li>
+        <li>Daglig renhold og vaskeri</li>
+        <li>Aktiviteter, underholdning og utflukter</li>
+        <li>WiFi og TV p&aring; rommet</li>
+        <li>Klimaanlegg og oppvarming</li>
+      </ul>
+    </div>
+
+    <div class="extra-list">
+      <h3>Tilleggstjenester (valgfritt)</h3>
+      <ul>
+        <li>Fysioterapi (individuelle &oslash;kter)</li>
+        <li>Fotpleie</li>
+        <li>Fris&oslash;rtjenester</li>
+        <li>Spesielle dietter etter behov</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PHOTO: CALA -->
+  <div class="photo-break">
+    <img src="../img/cala-hd.jpg" alt="Kysten ved Torrevieja">
+    <div class="photo-caption">
+      <span>Krystallklart vann &middot; Costa Blanca</span>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL -->
+  <div class="testimonial">
+    <blockquote>
+      Da mamma ikke lenger kunne bo alene i Oslo, var vi redde for &aring; flytte henne s&aring; langt unna. Men fra f&oslash;rste dag p&aring; Mar Bella forsto vi at vi hadde tatt det beste valget. Hun har f&aring;tt tilbake livsgnisten, koser seg med sol og hav hver dag, og personalet behandler henne som sin egen familie. Vi bes&oslash;ker henne ofte &mdash; det er jo bare 2,5 timer med fly.
+    </blockquote>
+    <div class="author">Kari og Erik Hansen</div>
+    <div class="author-detail">Oslo &middot; Mor beboer p&aring; Mar Bella siden 2023</div>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="section section-alt">
+    <h2>Beliggenhet &amp; <span>reise</span></h2>
+    <div class="gold-divider"></div>
+
+    <div class="location-info">
+      <div class="loc-icon">&#9992;&#65039;</div>
+      <div class="loc-details">
+        <p><strong>25 minutter</strong> fra Alicante-Elche internasjonale flyplass</p>
+        <p><strong>Direktefly fra Oslo og Bergen</strong> &mdash; kun 2,5 timers flytur</p>
+        <p><strong>320 soldager i &aring;ret</strong> &mdash; mildt vinterklima, aldri under 10&deg;C</p>
+      </div>
+    </div>
+
+    <div class="flights-box">
+      <p>
+        &#9992; <strong>Norwegian, SAS og Vueling</strong> flyr direkte fra Norge til Alicante hele &aring;ret.
+        Bes&oslash;k dine kj&aelig;re n&aring;r som helst &mdash; enkelt og rimelig.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Bestill en uforpliktende omvisning</h2>
+    <p class="cta-sub">Vi tar gjerne imot deg og viser deg rundt p&aring; Mar Bella. Kontakt oss i dag.</p>
+
+    <div class="cta-buttons">
+      <a href="tel:+34677919951" class="cta-btn phone">
+        <span class="btn-icon">&#128222;</span>
+        Ring oss: +34 677 919 951
+      </a>
+      <a href="mailto:residencia@residenciamarbella.com" class="cta-btn email">
+        <span class="btn-icon">&#9993;</span>
+        residencia@residenciamarbella.com
+      </a>
+      <a href="https://wa.me/34677919951?text=Hei!%20Jeg%20%C3%B8nsker%20informasjon%20om%20Mar%20Bella%20eldresenter." class="cta-btn whatsapp">
+        <span class="btn-icon">&#128172;</span>
+        Skriv til oss p&aring; WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-name">Centro Mayores Mar Bella</div>
+    <p>
+      Avda. Alfredo Nobel, 8<br>
+      03183 Torrevieja, Alicante, Spania<br>
+      Tlf: +34 965 710 828 / +34 677 919 951<br>
+      <a href="https://marbellacarehome.com">marbellacarehome.com</a>
+    </p>
+    <p style="margin-top: 15px; opacity: 0.4; font-size: 11px;">
+      Direkt&oslash;r: Jes&uacute;s Valverde Motos &middot; Grunnlagt 1994 &middot; 30+ &aring;rs erfaring
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
