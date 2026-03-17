@@ -40,9 +40,10 @@ body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charc
 
 .hub-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
+.card-full { grid-column: 1 / -1; }
 
 .card {
     background: var(--white);
@@ -193,6 +194,7 @@ body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charc
 @media (max-width: 768px) {
     .hub-header { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
     .hub-grid { grid-template-columns: 1fr; }
+    .card-full { grid-column: auto; }
 }
 </style>
 </head>
@@ -478,7 +480,7 @@ body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charc
 </div>
 
 <!-- PLAN MARKETING NORUEGOS -->
-<div class="card" style="grid-column: 1 / -1;">
+<div class="card card-full">
     <div class="card-header">
         <div class="icon icon-green">&#127987;</div>
         <h2>Plan de Marketing — Captacion Residentes Noruegos</h2>
@@ -531,7 +533,7 @@ body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charc
 </div>
 
 <!-- SEO & SEM NORUEGA -->
-<div class="card" style="grid-column: 1 / -1;">
+<div class="card card-full">
     <div class="card-header">
         <div class="icon icon-blue">&#128270;</div>
         <h2>SEO Organico + SEM Google Ads — Noruega</h2>
@@ -730,7 +732,7 @@ body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charc
 </div>
 
 <!-- EMAILS PARA ENVIAR -->
-<div class="card" style="grid-column: 1 / -1;">
+<div class="card card-full">
     <div class="card-header">
         <div class="icon icon-red">&#128231;</div>
         <h2>Emails para Enviar — Copiar y Mandar</h2>
