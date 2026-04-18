@@ -8,7 +8,7 @@
 
 Buenos dias,
 
-Soy [NOMBRE] en representacion de Centro de Mayores Mar Bella, titular del dominio **residenciamarbella.com**.
+Soy María Ángeles Motos García (DNI 21970355L), responsable del **Centro de Mayores Mar Bella** y titular del dominio **residenciamarbella.com**.
 
 Os escribimos por tres asuntos relacionados:
 
@@ -48,6 +48,6 @@ Si en ese plazo no recibimos respuesta, procederemos a formalizar reclamacion po
 Quedo a la espera de su respuesta.
 
 Un saludo,
-[NOMBRE]
-[TELEFONO]
-[EMAIL]
+María Ángeles Motos García — Centro de Mayores Mar Bella
+Avda. Alfredo Nobel, 8, 03183 Torrevieja
+Tel: 965 710 828

@@ -7,7 +7,7 @@
 
 Buenos dias,
 
-Soy [NOMBRE], en representacion del titular del dominio **residenciamarbella.es** (titular: Jesus [APELLIDOS], DNI [DNI]).
+Soy María Ángeles Motos García (DNI 21970355L), titular del dominio **residenciamarbella.es**.
 
 Nos han confirmado que el dominio esta registrado a traves de Arsys. Solicitamos que nos faciliten el **codigo de autorizacion (Auth Code / EPP)** para proceder a la transferencia del dominio a otro registrador.
 
@@ -23,9 +23,9 @@ Por favor, indicadnos:
 Quedo a la espera de vuestras instrucciones.
 
 Un saludo,
-[NOMBRE]
-[TELEFONO]
-[EMAIL]
+María Ángeles Motos García — Centro de Mayores Mar Bella
+Avda. Alfredo Nobel, 8, 03183 Torrevieja
+Tel: 965 710 828
 
 ---
 
