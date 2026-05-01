@@ -203,7 +203,7 @@ body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charc
 <header class="hub-header">
     <div>
         <h1>Mar <span>Bella</span> — Hub de Gestion</h1>
-        <p class="date">Actualizado: 4 abril 2026</p>
+        <p class="date">Actualizado: 1 mayo 2026</p>
     </div>
     <a href="index.html" style="color:var(--gold-light);font-size:0.82rem;text-decoration:none;">Ver landing &rarr;</a>
 </header>
@@ -245,20 +245,28 @@ body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charc
             </li>
         </ul>
         <div class="info-row" style="margin-top:0.5rem;">
-            <span class="info-label">Dominio ES</span>
-            <span class="info-value"><a href="https://centromayoresmarbella.com/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">centromayoresmarbella.com</a> <span class="badge badge-live">Comprado</span></span>
+            <span class="info-label">Dominio principal</span>
+            <span class="info-value"><a href="https://residenciamarbella.com/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">residenciamarbella.com</a> <span class="badge badge-live">Sirviendo (1 may 2026)</span></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Dominio defensivo ES</span>
+            <span class="info-value"><a href="https://centromayoresmarbella.com/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">centromayoresmarbella.com</a> <span class="badge badge-live">301 al principal</span></span>
         </div>
         <div class="info-row">
             <span class="info-label">Dominio EN/NO</span>
-            <span class="info-value"><a href="https://marbellacarehome.com/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">marbellacarehome.com</a> <span class="badge badge-live">Comprado</span></span>
+            <span class="info-value"><a href="https://marbellacarehome.com/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">marbellacarehome.com</a> <span class="badge badge-pending">OVH parking</span></span>
         </div>
         <div class="info-row">
-            <span class="info-label">URL temporal</span>
+            <span class="info-label">Dominio .es</span>
+            <span class="info-value"><a href="https://residenciamarbella.es/" target="_blank" rel="noopener" style="color:var(--red);text-decoration:none;">residenciamarbella.es</a> <span class="badge badge-urgent">Caido (DNS TPIOL apunta a IP vieja)</span></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">URL backup</span>
             <span class="info-value"><a href="https://pedrofenixia.github.io/residencia-torrevieja/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">pedrofenixia.github.io/residencia-torrevieja</a></span>
         </div>
         <div class="info-row">
             <span class="info-label">Hosting</span>
-            <span class="info-value">GitHub Pages (gratis)</span>
+            <span class="info-value">GitHub Pages (gratis) - cert HTTPS Let's Encrypt activo</span>
         </div>
         <div class="info-row">
             <span class="info-label">Registrador nuevos</span>
@@ -885,10 +893,25 @@ body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: var(--charc
             <li>&#9745; MCC Google Ads creado (pedro@matizal.com) <span class="badge badge-live">Hecho</span></li>
         </ul>
 
-        <h4 style="font-size:0.78rem;font-weight:700;color:var(--red);margin-top:1rem;margin-bottom:0.5rem;">URGENTE</h4>
+        <h4 style="font-size:0.78rem;font-weight:700;color:var(--green);margin-top:1rem;margin-bottom:0.5rem;">HECHO HOY (1 mayo 2026)</h4>
         <ul>
-            <li>&#9744; Configurar DNS en OVH (centromayoresmarbella.com) <span class="badge badge-urgent">Urgente</span></li>
-            <li>&#9744; Configurar DNS en OVH (marbellacarehome.com) <span class="badge badge-urgent">Urgente</span></li>
+            <li>&#9745; Cambiar DNS de residenciamarbella.com a GitHub Pages (panel Delirium) <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; CNAME del repo cambiado a residenciamarbella.com <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; Cert HTTPS Let's Encrypt emitido por GitHub Pages <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; Enforce HTTPS activado en GitHub Pages <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; Redirect 301 centromayoresmarbella.com (apex + www) -> residenciamarbella.com en OVH <span class="badge badge-live">Hecho</span></li>
+            <li>&#9745; Mapa fenixia actualizado con nuevo estado <span class="badge badge-live">Hecho</span></li>
+        </ul>
+
+        <h4 style="font-size:0.78rem;font-weight:700;color:var(--red);margin-top:1rem;margin-bottom:0.5rem;">URGENTE - Transferencia dominios a OVH antes 01/07/2026</h4>
+        <ul>
+            <li>&#9744; Enviar email a Delirium (soporte@deliriumdigital.es) pidiendo auth code de residenciamarbella.com <span class="badge badge-urgent">Urgente</span></li>
+            <li>&#9744; Enviar email a Arsys (clientes@arsys.es / 941 620 100) pidiendo auth code de residenciamarbella.es <span class="badge badge-urgent">Urgente</span></li>
+            <li>&#9744; Verificar contacto registrante ICANN (revisar bandeja geriatrico@residenciamarbella.com) <span class="badge badge-urgent">Urgente</span></li>
+            <li>&#9744; Migrar buzones (jesus@, residencia@, residenciamarbella@, geriatrico@) de Tecnoworld a OVH ANTES de transferir <span class="badge badge-urgent">Urgente</span></li>
+            <li>&#9744; Configurar DNS .es: cambiar NS o A en panel TPIOL/Arsys -> GitHub Pages <span class="badge badge-urgent">Urgente</span></li>
+            <li>&#9744; OVH -> Web Cloud -> Pedidos -> Transferir dominio (auth codes, ~8-10€ cada uno) <span class="badge badge-pending">Tras auth codes</span></li>
+            <li>&#9744; Configurar DNS marbellacarehome.com en OVH (apuntar a GitHub Pages o redirect a principal) <span class="badge badge-pending">Pendiente</span></li>
             <li>&#9745; Enviar carta a Publicidad Digital e-online <span class="badge badge-live">Hecho</span></li>
             <li>&#9745; Enviar carta a Dinahosting (.com + .es) <span class="badge badge-live">Hecho</span></li>
             <li>&#9745; Enviar carta a Tecnoworld (email) <span class="badge badge-live">Hecho</span></li>
