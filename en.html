@@ -7,7 +7,7 @@
 
 <!-- SEO Meta Tags -->
 <meta name="description" content="Luxury senior residence in Torrevieja on the Mediterranean beachfront. Over 30 years of personalised 24h care. Physiotherapy, rehabilitation, cognitive stimulation and home-cooked meals. The only care home right on the sea in Costa Blanca. ☎ 965 710 828">
-<meta name="keywords" content="luxury senior residence Spain, care home Costa Blanca, nursing home Torrevieja, beachfront elderly care, retirement home Mediterranean, senior living Torrevieja, assisted living Spain, residential care Costa Blanca, elderly care home Alicante, Mar Bella care home">
+<meta name="keywords" content="senior care home Torrevieja, nursing home Torrevieja, retirement home Torrevieja, elderly care Torrevieja, care home Costa Blanca, care home Alicante, senior residence Torrevieja, elderly residence Alicante, luxury care home Torrevieja, private nursing home Torrevieja, seafront care home Torrevieja, beachfront retirement Costa Blanca, Mar Bella Torrevieja, Mar Bella senior care home, care home with physiotherapy Torrevieja, 24h care Torrevieja, international care home Costa Blanca, care home for foreigners Torrevieja, care home for Norwegians Torrevieja, Nordic retirement Costa Blanca, refurbished nursing home Torrevieja, best care home Torrevieja, best care home Alicante">
 <meta name="author" content="Mar Bella Senior Care Home">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="language" content="English">
@@ -16,18 +16,18 @@
 <meta name="geo.placename" content="Torrevieja">
 <meta name="geo.position" content="37.975;-0.6835">
 <meta name="ICBM" content="37.975, -0.6835">
-<link rel="canonical" href="https://marbellacarehome.com/">
-<link rel="alternate" hreflang="es" href="https://centromayoresmarbella.com/">
-<link rel="alternate" hreflang="en" href="https://marbellacarehome.com/">
-<link rel="alternate" hreflang="no" href="https://marbellacarehome.com/no.html">
-<link rel="alternate" hreflang="x-default" href="https://centromayoresmarbella.com/">
+<link rel="canonical" href="https://residenciamarbella.com/en.html">
+<link rel="alternate" hreflang="es" href="https://residenciamarbella.com/">
+<link rel="alternate" hreflang="en" href="https://residenciamarbella.com/en.html">
+<link rel="alternate" hreflang="no" href="https://residenciamarbella.com/no.html">
+<link rel="alternate" hreflang="x-default" href="https://residenciamarbella.com/">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://marbellacarehome.com/">
+<meta property="og:url" content="https://residenciamarbella.com/en.html">
 <meta property="og:title" content="Luxury Senior Residence in Torrevieja | Mar Bella — Mediterranean Beachfront">
 <meta property="og:description" content="Over 30 years of caring excellence. The only luxury senior residence on the Mediterranean in Torrevieja. Personalised 24h care, physiotherapy, home-cooked meals.">
-<meta property="og:image" content="https://marbellacarehome.com/img/fachada-frontal-hd.jpg">
+<meta property="og:image" content="https://residenciamarbella.com/en.htmlimg/fachada-frontal-hd.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Facade of Mar Bella Senior Residence in Torrevieja by the sea">
@@ -38,7 +38,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Luxury Senior Residence in Torrevieja | Mar Bella — Mediterranean Beachfront">
 <meta name="twitter:description" content="The only luxury senior residence on the Mediterranean in Torrevieja. 30+ years of experience, 24h care and fully renovated.">
-<meta name="twitter:image" content="https://marbellacarehome.com/img/fachada-frontal-hd.jpg">
+<meta name="twitter:image" content="https://residenciamarbella.com/en.htmlimg/fachada-frontal-hd.jpg">
 
 <!-- Schema.org - LocalBusiness -->
 <script type="application/ld+json">
@@ -48,12 +48,12 @@
   "name": "Mar Bella Senior Care Home",
   "alternateName": "Residencia Mar Bella",
   "description": "Luxury senior residence in Torrevieja on the Mediterranean beachfront. Over 30 years offering personalised 24h care, physiotherapy, rehabilitation, cognitive stimulation and home-cooked meals. The only care home right on the sea in the area.",
-  "url": "https://marbellacarehome.com/",
+  "url": "https://residenciamarbella.com/en.html",
   "telephone": ["+34965710828", "+34677919951"],
   "email": "residencia@residenciamarbella.com",
   "foundingDate": "1994",
-  "image": "https://marbellacarehome.com/img/fachada-frontal-hd.jpg",
-  "logo": "https://marbellacarehome.com/img/fachada-frontal-hd.jpg",
+  "image": "https://residenciamarbella.com/en.htmlimg/fachada-frontal-hd.jpg",
+  "logo": "https://residenciamarbella.com/en.htmlimg/fachada-frontal-hd.jpg",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Avda. Alfredo Nobel, 8",
@@ -2071,6 +2071,53 @@ section {
     }
 }
 </style>
+
+<!-- Google Analytics 4 (GA4) - Reemplazar G-XXXXXXXXXX con el Measurement ID real -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    'send_page_view': true,
+    'anonymize_ip': true
+  });
+
+  // Scroll depth tracking (25%, 50%, 75%, 100%)
+  (function() {
+    var marks = [25, 50, 75, 100];
+    var fired = {};
+    function checkScroll() {
+      var h = document.documentElement;
+      var scrollPct = Math.round((h.scrollTop + window.innerHeight) / h.scrollHeight * 100);
+      marks.forEach(function(m) {
+        if (scrollPct >= m && !fired[m]) {
+          fired[m] = true;
+          gtag('event', 'scroll_depth', { 'percent': m });
+        }
+      });
+    }
+    window.addEventListener('scroll', checkScroll, { passive: true });
+  })();
+
+  // Track form submissions
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('form').forEach(function(f) {
+      f.addEventListener('submit', function() {
+        gtag('event', 'form_submit', {
+          'form_name': f.className.split(' ')[0] || 'unknown'
+        });
+      });
+    });
+    // Track WhatsApp / phone clicks
+    document.querySelectorAll('a[href^="tel:"], a[href*="wa.me"], a[href^="https://wa.me"]').forEach(function(a) {
+      a.addEventListener('click', function() {
+        var type = a.href.startsWith('tel:') ? 'phone_click' : 'whatsapp_click';
+        gtag('event', type, { 'link_url': a.href });
+      });
+    });
+  });
+</script>
 </head>
 
 <body>
@@ -2492,7 +2539,7 @@ section {
         </div>
         <form class="contact-form reveal" action="https://formsubmit.co/residencia@residenciamarbella.com" method="POST">
             <input type="hidden" name="_subject" value="New enquiry from Mar Bella website (EN)">
-            <input type="hidden" name="_next" value="https://marbellacarehome.com/#contact">
+            <input type="hidden" name="_next" value="https://residenciamarbella.com/en.html#contact">
             <input type="hidden" name="_language" value="en">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
@@ -2526,7 +2573,7 @@ section {
             </div>
             <form class="callback-form" action="https://formsubmit.co/residencia@residenciamarbella.com" method="POST">
                 <input type="hidden" name="_subject" value="Callback request from Mar Bella website (EN)">
-                <input type="hidden" name="_next" value="https://marbellacarehome.com/#call-me">
+                <input type="hidden" name="_next" value="https://residenciamarbella.com/en.html#call-me">
                 <input type="text" name="nombre" placeholder="Your name" required>
                 <input type="tel" name="telefono" placeholder="Your phone number" required>
                 <select name="horario" title="Preferred time" required>
