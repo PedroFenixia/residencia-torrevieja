@@ -982,8 +982,16 @@ section {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 250px);
+    grid-template-rows: repeat(4, 220px);
     gap: 1rem;
+}
+
+.gallery-item.tall {
+    grid-row: span 2;
+}
+
+.gallery-item.wide {
+    grid-column: span 2;
 }
 
 .gallery-item {
@@ -1001,15 +1009,6 @@ section {
 
 .gallery-item:hover img {
     transform: scale(1.05);
-}
-
-.gallery-item:nth-child(1) {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.gallery-item:nth-child(4) {
-    grid-column: span 2;
 }
 
 .gallery-item .gallery-overlay {
@@ -2016,15 +2015,14 @@ section {
 
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 200px);
+        grid-auto-rows: 200px;
     }
 
-    .gallery-item:nth-child(1) {
-        grid-column: span 2;
-        grid-row: span 1;
+    .gallery-item.tall {
+        grid-row: span 2;
     }
 
-    .gallery-item:nth-child(4) {
+    .gallery-item.wide {
         grid-column: span 2;
     }
 
@@ -2342,21 +2340,37 @@ section {
             <p class="section-subtitle reveal reveal-delay-2">A visual tour of our facilities and the daily life of our residents.</p>
         </div>
         <div class="gallery-grid reveal">
+            <div class="gallery-item tall">
+                <img src="img/desde-mar-hd.jpg" alt="View of Mar Bella from the Mediterranean" loading="lazy">
+                <div class="gallery-overlay"><span>Facing the Mediterranean</span></div>
+            </div>
+            <div class="gallery-item wide">
+                <img src="img/fachada-lateral-hd.jpg" alt="Full facade of Mar Bella Senior Care Home" loading="lazy">
+                <div class="gallery-overlay"><span>Our Building</span></div>
+            </div>
             <div class="gallery-item">
-                <img src="img/cala-hd.jpg" alt="Cove next to Mar Bella Senior Residence in Torrevieja" loading="lazy">
-                <div class="gallery-overlay"><span>Our Cove</span></div>
+                <img src="img/cartel-detalle-hd.jpg" alt="Mar Bella Senior Care Home sign" loading="lazy">
+                <div class="gallery-overlay"><span>Mar Bella Senior Care Home</span></div>
             </div>
             <div class="gallery-item">
                 <img src="img/fachada-frontal-hd.jpg" alt="Entrance of Mar Bella Senior Care Home" loading="lazy">
                 <div class="gallery-overlay"><span>Main Entrance</span></div>
             </div>
             <div class="gallery-item">
-                <img src="img/amanecerlejos-hd.jpg" alt="Sunrise from Mar Bella Senior Residence" loading="lazy">
-                <div class="gallery-overlay"><span>Sunrise by the Sea</span></div>
+                <img src="img/entrada-acristalada-hd.jpg" alt="Glass entrance with accessible ramp" loading="lazy">
+                <div class="gallery-overlay"><span>Accessible Entrance</span></div>
             </div>
             <div class="gallery-item">
-                <img src="img/fachada-lateral-hd.jpg" alt="Full facade of Mar Bella Senior Care Home" loading="lazy">
-                <div class="gallery-overlay"><span>Our Building</span></div>
+                <img src="img/banos-accesibles-hd.jpg" alt="Adapted accessible bathrooms" loading="lazy">
+                <div class="gallery-overlay"><span>Adapted Bathrooms</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/cala-hd.jpg" alt="Cove next to Residencia Mar Bella in Torrevieja" loading="lazy">
+                <div class="gallery-overlay"><span>Our Cove</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/amanecerlejos-hd.jpg" alt="Sunrise from Residencia Mar Bella" loading="lazy">
+                <div class="gallery-overlay"><span>Sunrise by the Sea</span></div>
             </div>
         </div>
     </div>

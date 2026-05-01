@@ -982,8 +982,16 @@ section {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 250px);
+    grid-template-rows: repeat(4, 220px);
     gap: 1rem;
+}
+
+.gallery-item.tall {
+    grid-row: span 2;
+}
+
+.gallery-item.wide {
+    grid-column: span 2;
 }
 
 .gallery-item {
@@ -1001,15 +1009,6 @@ section {
 
 .gallery-item:hover img {
     transform: scale(1.05);
-}
-
-.gallery-item:nth-child(1) {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.gallery-item:nth-child(4) {
-    grid-column: span 2;
 }
 
 .gallery-item .gallery-overlay {
@@ -2016,15 +2015,14 @@ section {
 
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 200px);
+        grid-auto-rows: 200px;
     }
 
-    .gallery-item:nth-child(1) {
-        grid-column: span 2;
-        grid-row: span 1;
+    .gallery-item.tall {
+        grid-row: span 2;
     }
 
-    .gallery-item:nth-child(4) {
+    .gallery-item.wide {
         grid-column: span 2;
     }
 
@@ -2342,21 +2340,37 @@ section {
             <p class="section-subtitle reveal reveal-delay-2">Un recorrido visual por nuestras instalaciones y el dia a dia de nuestros residentes.</p>
         </div>
         <div class="gallery-grid reveal">
+            <div class="gallery-item tall">
+                <img src="img/desde-mar-hd.jpg" alt="Vista de la Residencia Mar Bella desde el Mediterraneo" loading="lazy">
+                <div class="gallery-overlay"><span>Frente al Mediterraneo</span></div>
+            </div>
+            <div class="gallery-item wide">
+                <img src="img/fachada-lateral-hd.jpg" alt="Fachada completa del Centro de Mayores Mar Bella" loading="lazy">
+                <div class="gallery-overlay"><span>Nuestro Edificio</span></div>
+            </div>
             <div class="gallery-item">
-                <img src="img/cala-hd.jpg" alt="Cala junto a la Residencia Mar Bella en Torrevieja" loading="lazy">
-                <div class="gallery-overlay"><span>Nuestra Cala</span></div>
+                <img src="img/cartel-detalle-hd.jpg" alt="Cartel Centro de Mayores Mar Bella" loading="lazy">
+                <div class="gallery-overlay"><span>Centro de Mayores Mar Bella</span></div>
             </div>
             <div class="gallery-item">
                 <img src="img/fachada-frontal-hd.jpg" alt="Entrada del Centro de Mayores Mar Bella" loading="lazy">
                 <div class="gallery-overlay"><span>Entrada Principal</span></div>
             </div>
             <div class="gallery-item">
-                <img src="img/amanecerlejos-hd.jpg" alt="Amanecer desde la Residencia Mar Bella" loading="lazy">
-                <div class="gallery-overlay"><span>Amanecer junto al Mar</span></div>
+                <img src="img/entrada-acristalada-hd.jpg" alt="Entrada acristalada accesible con rampa" loading="lazy">
+                <div class="gallery-overlay"><span>Acceso Accesible</span></div>
             </div>
             <div class="gallery-item">
-                <img src="img/fachada-lateral-hd.jpg" alt="Fachada completa del Centro de Mayores Mar Bella" loading="lazy">
-                <div class="gallery-overlay"><span>Nuestro Edificio</span></div>
+                <img src="img/banos-accesibles-hd.jpg" alt="Banos adaptados accesibles" loading="lazy">
+                <div class="gallery-overlay"><span>Banos Adaptados</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/cala-hd.jpg" alt="Cala junto a la Residencia Mar Bella en Torrevieja" loading="lazy">
+                <div class="gallery-overlay"><span>Nuestra Cala</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/amanecerlejos-hd.jpg" alt="Amanecer desde la Residencia Mar Bella" loading="lazy">
+                <div class="gallery-overlay"><span>Amanecer junto al Mar</span></div>
             </div>
         </div>
     </div>
