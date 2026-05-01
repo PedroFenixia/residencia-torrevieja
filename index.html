@@ -2072,13 +2072,23 @@ section {
 }
 </style>
 
-<!-- Google Analytics 4 (GA4) - Reemplazar G-XXXXXXXXXX con el Measurement ID real -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google Analytics 4 (GA4) - Reemplazar G-J4CJBNCF1R con el Measurement ID real -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J4CJBNCF1R"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', {
+
+  // Consent Mode v2 - default DENY hasta que usuario acepte
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('config', 'G-J4CJBNCF1R', {
     'send_page_view': true,
     'anonymize_ip': true
   });
@@ -2858,6 +2868,149 @@ document.addEventListener('click', function(e) {
         document.getElementById('langDropdown').classList.remove('open');
     }
 });
+</script>
+
+
+<!-- Cookie Consent Banner -->
+<style>
+  #cc-banner {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(27,73,101,0.98); color: #fff;
+    padding: 1.2rem 1.5rem; z-index: 9999;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+    font-family: 'Inter', sans-serif; font-size: 0.85rem;
+    display: none;
+  }
+  #cc-banner.show { display: block; }
+  #cc-banner .cc-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 1.5rem;
+    flex-wrap: wrap; justify-content: space-between;
+  }
+  #cc-banner .cc-text { flex: 1 1 400px; line-height: 1.5; }
+  #cc-banner .cc-text strong { color: #F0C040; font-size: 0.95rem; display: block; margin-bottom: 0.3rem; }
+  #cc-banner .cc-text a { color: #F0C040; text-decoration: underline; }
+  #cc-banner .cc-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  #cc-banner button {
+    background: #fff; color: #1B4965; border: none;
+    padding: 0.6rem 1.1rem; border-radius: 4px;
+    font-weight: 600; font-size: 0.82rem; cursor: pointer;
+    font-family: inherit; transition: opacity 0.2s;
+  }
+  #cc-banner button:hover { opacity: 0.85; }
+  #cc-banner button.cc-secondary {
+    background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4);
+  }
+  #cc-banner button.cc-primary { background: #D4A017; color: #1B4965; }
+  #cc-modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+    z-index: 10000; display: none;
+    align-items: center; justify-content: center;
+  }
+  #cc-modal.show { display: flex; }
+  #cc-modal .cc-modal-inner {
+    background: #fff; color: #2C2C2C; padding: 2rem;
+    max-width: 480px; width: 90%; border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+  }
+  #cc-modal h3 { font-family: 'Playfair Display', serif; color: #1B4965; margin-bottom: 1rem; }
+  #cc-modal .cc-toggle-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.8rem 0; border-bottom: 1px solid #eee;
+  }
+  #cc-modal .cc-toggle-row label { font-weight: 600; font-size: 0.9rem; }
+  #cc-modal .cc-toggle-row p { font-size: 0.78rem; color: #666; margin-top: 0.2rem; }
+  #cc-modal input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; }
+  #cc-modal input[type="checkbox"]:disabled { opacity: 0.5; cursor: not-allowed; }
+  #cc-modal .cc-modal-actions { margin-top: 1.5rem; text-align: right; }
+  @media (max-width: 600px) {
+    #cc-banner .cc-inner { flex-direction: column; align-items: stretch; }
+    #cc-banner .cc-buttons { justify-content: stretch; }
+    #cc-banner .cc-buttons button { flex: 1; }
+  }
+</style>
+<div id="cc-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cc-inner">
+    <div class="cc-text">
+      <strong>Tu privacidad nos importa</strong>
+      Usamos cookies propias y de terceros (Google Analytics) para medir el trafico y mejorar la experiencia. Puedes aceptar todas, rechazar las opcionales o configurar tu eleccion. <a href="cookies.html">Mas info</a>.
+    </div>
+    <div class="cc-buttons">
+      <button class="cc-secondary" onclick="ccReject()">Solo necesarias</button>
+      <button class="cc-secondary" onclick="ccOpenModal()">Configurar</button>
+      <button class="cc-primary" onclick="ccAcceptAll()">Aceptar todas</button>
+    </div>
+  </div>
+</div>
+<div id="cc-modal" role="dialog" aria-label="Cookie settings">
+  <div class="cc-modal-inner">
+    <h3>Configuracion de cookies</h3>
+    <div class="cc-toggle-row">
+      <div>
+        <label>Necesarias (siempre activas)</label>
+        <p>Mantienen la pagina operativa. No se pueden desactivar.</p>
+      </div>
+      <input type="checkbox" checked disabled>
+    </div>
+    <div class="cc-toggle-row">
+      <div>
+        <label>Analiticas (Google Analytics)</label>
+        <p>Nos ayudan a entender cuantas personas visitan la web y desde donde.</p>
+      </div>
+      <input type="checkbox" id="cc-analytics-toggle">
+    </div>
+    <div class="cc-modal-actions">
+      <button class="cc-primary" onclick="ccSavePrefs()" style="background:#D4A017;color:#1B4965;border:none;padding:0.6rem 1.1rem;border-radius:4px;font-weight:600;cursor:pointer;">Guardar preferencias</button>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var KEY = 'cc-prefs-v1';
+  var stored = null;
+  try { stored = JSON.parse(localStorage.getItem(KEY)); } catch(e) {}
+
+  if (!stored) {
+    document.getElementById('cc-banner').classList.add('show');
+  } else if (stored.analytics) {
+    grantAnalytics();
+  }
+
+  window.ccAcceptAll = function() {
+    save({ analytics: true });
+    grantAnalytics();
+    hideAll();
+  };
+  window.ccReject = function() {
+    save({ analytics: false });
+    hideAll();
+  };
+  window.ccOpenModal = function() {
+    document.getElementById('cc-modal').classList.add('show');
+    var t = document.getElementById('cc-analytics-toggle');
+    if (stored) t.checked = !!stored.analytics;
+  };
+  window.ccSavePrefs = function() {
+    var analytics = document.getElementById('cc-analytics-toggle').checked;
+    save({ analytics: analytics });
+    if (analytics) grantAnalytics();
+    hideAll();
+  };
+
+  function save(prefs) {
+    stored = Object.assign({ ts: Date.now() }, prefs);
+    localStorage.setItem(KEY, JSON.stringify(stored));
+  }
+  function grantAnalytics() {
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  }
+  function hideAll() {
+    document.getElementById('cc-banner').classList.remove('show');
+    document.getElementById('cc-modal').classList.remove('show');
+  }
+})();
 </script>
 
 </body>
