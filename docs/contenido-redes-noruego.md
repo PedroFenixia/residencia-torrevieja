@@ -33,7 +33,7 @@
 
 ### Post 2 — Miércoles · Instalaciones (Facility)
 
-**Imagen sugerida:** `fachadagrande-hd.jpg`
+**Imagen sugerida:** `fachada-lateral-hd.jpg`
 
 **Texto:**
 
@@ -78,7 +78,7 @@
 
 ### Post 4 — Lunes · Informativo (Precios/Servicios)
 
-**Imagen sugerida:** `fachadacerca-hd.jpg`
+**Imagen sugerida:** `fachada-frontal-hd.jpg`
 
 **Texto:**
 
@@ -149,7 +149,7 @@
 
 ### Post 7 — Lunes · Comunidad/Actividades (Community)
 
-**Imagen sugerida:** Foto de actividad grupal (manualidades, juegos, música). Si no hay, usar `fachadacerca-hd.jpg`.
+**Imagen sugerida:** Foto de actividad grupal (manualidades, juegos, música). Si no hay, usar `fachada-frontal-hd.jpg`.
 
 **Texto:**
 
@@ -199,7 +199,7 @@
 
 ### Post 9 — Viernes · Equipo/Cuidado (Facility)
 
-**Imagen sugerida:** Foto del personal (con permiso) o `fachadacerca-hd.jpg`
+**Imagen sugerida:** Foto del personal (con permiso) o `fachada-frontal-hd.jpg`
 
 **Texto:**
 
@@ -248,7 +248,7 @@
 
 ### Post 11 — Miércoles · Comparativa (Informativo)
 
-**Imagen sugerida:** Diseño gráfico simple o `fachadagrande-hd.jpg`
+**Imagen sugerida:** Diseño gráfico simple o `fachada-lateral-hd.jpg`
 
 **Texto:**
 

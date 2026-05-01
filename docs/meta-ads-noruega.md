@@ -14,7 +14,7 @@
    - **Categoría principal:** "Nursing Home" (Residencia de ancianos)
    - **Categoría secundaria:** "Senior Living" (Vida para mayores)
    - **Nombre de usuario:** @centromayoresmarbella
-   - **Foto de perfil:** Logo o fachada cercana (`fachadacerca-hd.jpg`)
+   - **Foto de perfil:** Logo o fachada cercana (`fachada-frontal-hd.jpg`)
    - **Foto de portada:** Amanecer con fachada (`amanecer-hd.jpg`)
    - **Bio:** "Luksus eldresenter ved Middelhavet i Torrevieja, Spania. 30+ års erfaring. Norske beboere velkommen. 🌊☀️"
    - **Datos de contacto:** Teléfono, email, web, dirección completa
@@ -137,9 +137,9 @@
 
 - **Formato:** Carrusel de fotos (5 imágenes)
   1. `amanecer-hd.jpg` — "Våkn opp til dette hver dag"
-  2. `fachadacerca-hd.jpg` — "Nylig totalrenovert"
+  2. `fachada-frontal-hd.jpg` — "Nylig totalrenovert"
   3. `cala-hd.jpg` — "Stranden er din nabo"
-  4. `fachadagrande-hd.jpg` — "45 plasser, 22 ansatte"
+  4. `fachada-lateral-hd.jpg` — "45 plasser, 22 ansatte"
   5. `amanecerlejos-hd.jpg` — "Fra 3 200 €/mnd, alt inkludert"
 - **CTA:** "Les mer" → marbellacarehome.com/no.html
 
@@ -162,7 +162,7 @@
 
 ### Anuncio 2 — Práctico: precios y comparativa
 
-**Imagen:** `fachadagrande-hd.jpg`
+**Imagen:** `fachada-lateral-hd.jpg`
 
 | Elemento | Texto (en noruego) |
 |----------|---------------------|
@@ -175,7 +175,7 @@
 
 ### Anuncio 3 — Social proof: "Noruegos ya nos eligieron"
 
-**Imagen:** `fachadacerca-hd.jpg`
+**Imagen:** `fachada-frontal-hd.jpg`
 
 | Elemento | Texto (en noruego) |
 |----------|---------------------|
