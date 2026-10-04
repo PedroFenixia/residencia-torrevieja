@@ -2852,13 +2852,16 @@ document.addEventListener('click', function(e) {
 </script>
 
 
-<!-- Formularios: se guardan en stats.fenixia.tech/f/ (registro + aviso) y reenvían el email a la residencia; si falla, envío clásico a FormSubmit -->
+<!-- Formularios: el navegador envía el email a la residencia por FormSubmit y deja copia en stats.fenixia.tech/f/ (registro + aviso); si todo falla, envío clásico a FormSubmit -->
 <style>
 .form-ok { padding: 1.2rem 1.4rem; border-left: 3px solid var(--gold); font-family: var(--font-body); font-size: 1.05rem; line-height: 1.5; color: inherit; }
 </style>
 <script>
 (function() {
   var ENDPOINT = 'https://stats.fenixia.tech/f/residenciamarbella';
+  function conTiempo(promesa, ms) {
+    return Promise.race([promesa, new Promise(function(_, no) { setTimeout(function() { no(new Error('tiempo agotado')); }, ms); })]);
+  }
   document.querySelectorAll('form[data-formulario]').forEach(function(form) {
     form.addEventListener('submit', function(e) {
       if (!window.fetch || form.dataset.clasico) { return; }
@@ -2866,24 +2869,38 @@ document.addEventListener('click', function(e) {
       var btn = form.querySelector('[type="submit"]');
       var texto = btn ? btn.textContent : '';
       if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
-      var datos = new URLSearchParams(new FormData(form));
-      datos.set('formulario', form.dataset.formulario);
-      datos.set('pagina', location.pathname);
-      fetch(ENDPOINT, { method: 'POST', body: datos })
-        .then(function(r) { if (!r.ok) { throw new Error(r.status); } })
-        .then(function() {
-          if (window.umami) { window.umami.track('lead_enviado', { formulario: form.dataset.formulario, pagina: location.pathname }); }
-          var ok = document.createElement('p');
-          ok.className = 'form-ok';
-          ok.setAttribute('role', 'status');
-          ok.textContent = form.dataset.ok;
-          form.replaceWith(ok);
-        })
-        .catch(function() {
-          if (btn) { btn.disabled = false; btn.textContent = texto; }
-          form.dataset.clasico = '1';
-          form.submit();
+      var campos = {};
+      new FormData(form).forEach(function(v, k) { if (k !== 'web') { campos[k] = v; } });
+      // 1) Email a la residencia: FormSubmit solo acepta envíos desde el navegador.
+      var email = conTiempo(fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(campos)
+      }).then(function(r) { return r.text(); }), 15000).catch(function(err) { return 'error ' + err.message; });
+      // 2) Copia en el registro propio (y aviso), con el resultado del email.
+      email.then(function(resultado) {
+        var datos = new URLSearchParams(new FormData(form));
+        datos.set('formulario', form.dataset.formulario);
+        datos.set('pagina', location.pathname);
+        datos.set('_formsubmit', String(resultado).slice(0, 300));
+        var guardado = conTiempo(fetch(ENDPOINT, { method: 'POST', body: datos }), 15000)
+          .then(function(r) { return r.ok; }).catch(function() { return false; });
+        return guardado.then(function(ok) {
+          var emailOk = /"success"\s*:\s*"?true/.test(resultado);
+          if (!ok && !emailOk) { throw new Error('sin envío'); }
         });
+      }).then(function() {
+        if (window.umami) { window.umami.track('lead_enviado', { formulario: form.dataset.formulario, pagina: location.pathname }); }
+        var aviso = document.createElement('p');
+        aviso.className = 'form-ok';
+        aviso.setAttribute('role', 'status');
+        aviso.textContent = form.dataset.ok;
+        form.replaceWith(aviso);
+      }).catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = texto; }
+        form.dataset.clasico = '1';
+        form.submit();
+      });
     });
   });
 })();
