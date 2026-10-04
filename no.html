@@ -2525,7 +2525,8 @@ section {
                 </div>
             </div>
         </div>
-        <form class="contact-form reveal" action="https://formsubmit.co/residencia@residenciamarbella.com" method="POST">
+        <form class="contact-form reveal" action="https://formsubmit.co/residencia@residenciamarbella.com" method="POST" data-formulario="contacto" data-ok="Takk! Vi har mottatt henvendelsen din og kontakter deg innen 24 timer.">
+            <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
             <input type="hidden" name="_subject" value="Ny henvendelse fra nettsiden Mar Bella (norsk)">
             <input type="hidden" name="_next" value="https://residenciamarbella.com/no.html#kontakt">
             <input type="hidden" name="_language" value="no">
@@ -2559,7 +2560,9 @@ section {
                 <h2 class="section-title callback-title">Foretrekker du at <em>vi ringer deg</em>?</h2>
                 <p class="callback-subtitle">Legg igjen ditt telefonnummer, så kontakter vi deg innen 24 timer. Helt uforpliktende.</p>
             </div>
-            <form class="callback-form" action="https://formsubmit.co/residencia@residenciamarbella.com" method="POST">
+            <form class="callback-form" action="https://formsubmit.co/residencia@residenciamarbella.com" method="POST" data-formulario="llamada" data-ok="Takk! Vi ringer deg på ønsket tidspunkt.">
+                <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+                <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="Tilbakeringingsforespørsel fra nettsiden Mar Bella (norsk)">
                 <input type="hidden" name="_next" value="https://residenciamarbella.com/no.html#vi-ringer">
                 <input type="text" name="nombre" placeholder="Ditt navn" required>
@@ -2849,5 +2852,41 @@ document.addEventListener('click', function(e) {
 </script>
 
 
+<!-- Formularios: se guardan en stats.fenixia.tech/f/ (registro + aviso) y reenvían el email a la residencia; si falla, envío clásico a FormSubmit -->
+<style>
+.form-ok { padding: 1.2rem 1.4rem; border-left: 3px solid var(--gold); font-family: var(--font-body); font-size: 1.05rem; line-height: 1.5; color: inherit; }
+</style>
+<script>
+(function() {
+  var ENDPOINT = 'https://stats.fenixia.tech/f/residenciamarbella';
+  document.querySelectorAll('form[data-formulario]').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      if (!window.fetch || form.dataset.clasico) { return; }
+      e.preventDefault();
+      var btn = form.querySelector('[type="submit"]');
+      var texto = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sender...'; }
+      var datos = new URLSearchParams(new FormData(form));
+      datos.set('formulario', form.dataset.formulario);
+      datos.set('pagina', location.pathname);
+      fetch(ENDPOINT, { method: 'POST', body: datos })
+        .then(function(r) { if (!r.ok) { throw new Error(r.status); } })
+        .then(function() {
+          if (window.umami) { window.umami.track('lead_enviado', { formulario: form.dataset.formulario, pagina: location.pathname }); }
+          var ok = document.createElement('p');
+          ok.className = 'form-ok';
+          ok.setAttribute('role', 'status');
+          ok.textContent = form.dataset.ok;
+          form.replaceWith(ok);
+        })
+        .catch(function() {
+          if (btn) { btn.disabled = false; btn.textContent = texto; }
+          form.dataset.clasico = '1';
+          form.submit();
+        });
+    });
+  });
+})();
+</script>
 </body>
 </html>
