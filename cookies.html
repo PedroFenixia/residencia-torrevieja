@@ -249,6 +249,9 @@ a { text-decoration: none; color: inherit; }
     .cookie-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
 </style>
+<!-- Analítica sin cookies (Umami · stats.fenixia.tech) -->
+<script defer src="https://stats.fenixia.tech/s.js" data-website-id="d6d1b71f-38a8-4b36-8521-8dcc82ffe265" data-domains="residenciamarbella.com,www.residenciamarbella.com"></script>
+<script>(function(){function t(n,d){if(window.umami){window.umami.track(n,d)}}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a){return}var h=a.getAttribute('href')||'',p={pagina:location.pathname};if(/^tel:/i.test(h)){t('telefono',p)}else if(/^mailto:/i.test(h)){t('email',p)}else if(/wa\.me|whatsapp\.com/i.test(h)){t('whatsapp',p)}else if(/^#contact/i.test(h)){p.texto=(a.textContent||'').trim().slice(0,40);t('cta_contacto',p)}else if(/^https?:/i.test(h)&&a.hostname!==location.hostname){p.destino=a.hostname;t('enlace_externo',p)}},true);document.addEventListener('submit',function(e){t('formulario',{pagina:location.pathname,form:e.target.id||e.target.getAttribute('name')||''})},true)})();</script>
 </head>
 <body>
 
@@ -337,6 +340,8 @@ a { text-decoration: none; color: inherit; }
     </div>
 
     <p>Google Analytics es un servicio de analisis web proporcionado por Google, Inc. (EE.UU.). Google puede utilizar los datos recopilados para contextualizar y personalizar los anuncios de su propia red de publicidad. Puede consultar la politica de privacidad de Google en <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="inline-link">policies.google.com/privacy</a>.</p>
+
+    <p><strong>Estad&iacute;sticas de visitas sin cookies:</strong> adem&aacute;s, para contar las visitas usamos <strong>Umami</strong>, una herramienta de anal&iacute;tica alojada en un servidor propio en la Uni&oacute;n Europea (stats.fenixia.tech). No instala cookies ni guarda nada en tu dispositivo, no te identifica y no comparte datos con terceros: solo registra datos agregados (p&aacute;ginas vistas, pa&iacute;s, tipo de dispositivo y navegador, web de procedencia y clics en los botones de contacto). Al no usar cookies ni identificadores persistentes, no requiere consentimiento.</p>
 
     <h3>2.3 Cookies de terceros (embeds)</h3>
     <p>Este sitio web incluye contenido incrustado de servicios de terceros que pueden instalar sus propias cookies:</p>

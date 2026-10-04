@@ -164,6 +164,46 @@ Tel: 965 710 828
 
 ---
 
+## CARTA 5: A Tecnoworld — Solicitud de baja del servicio
+
+---
+
+**Asunto:** Solicitud de baja del servicio de correo y DNS — residenciamarbella.com
+
+Estimados señores de Tecnoworld,
+
+Me dirijo a ustedes como representante legal del **Centro de Mayores Mar Bella**, titular del dominio **residenciamarbella.com**.
+
+Por la presente comunicación les solicito formalmente la **baja definitiva** de todos los servicios contratados con su empresa asociados a dicho dominio, en particular:
+
+- Servicio de DNS (servidores `ns.tecnoworld.com` y `nsw.tecnoworld.com`)
+- Servicio de correo electrónico y todas las cuentas asociadas (`jesus@`, `residencia@`, `residenciamarbella@`, `geriatrico@`)
+- Cualquier otro servicio adicional vinculado al dominio
+
+Les solicito específicamente:
+
+1. **Confirmación por escrito** de la fecha efectiva de baja de todos los servicios.
+2. **Cese inmediato de cualquier cargo recurrente** (anual o mensual) a partir de dicha fecha.
+3. **No renovación automática** de ningún servicio en próximos vencimientos.
+4. **Acceso temporal mantenido** al servicio de correo durante el periodo de migración (estimado 30 días desde esta comunicación) para poder descargar los buzones existentes vía IMAP.
+5. **Detalle de la fecha de renovación** del servicio actualmente en vigor, para poder coordinar la migración antes de dicha fecha y evitar cargos adicionales.
+
+Les informo de que vamos a migrar tanto el servicio de DNS como el de correo electrónico a otro proveedor, por lo que sus servicios dejarán de ser necesarios.
+
+Quedo a la espera de su confirmación.
+
+Atentamente,
+
+[NOMBRE Y APELLIDOS]
+[CARGO]
+Centro de Mayores Mar Bella
+Avda. Alfredo Nobel, 8
+03183 Torrevieja, Alicante
+Tel: 965 710 828
+Email: residencia@residenciamarbella.com
+
+---
+
 ## Plan de migración completo a OVH
 
 ### Fase 1: Email (ANTES de tocar el dominio)

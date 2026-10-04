@@ -1,49 +1,66 @@
-# Email a Delirium Digital — Web caida + inventario email + Auth Code .com
+# Email a Delirium Digital / Tecnoworld — Auth Code + baja DNS y email
 
 **Para:** soporte@deliriumdigital.es
-**CC:** soporte@dinahosting.com
-**Asunto:** URGENTE — residenciamarbella.com: web caida, inventario de correo y Auth Code
+**CC:** info@tecnoworld.com, soporte@dinahosting.com
+**Asunto:** residenciamarbella.com — Solicitud de Auth Code y baja de servicios DNS y correo
 
 ---
 
 Buenos dias,
 
-Soy María Ángeles Motos García (DNI 21970355L), responsable del **Centro de Mayores Mar Bella** y titular del dominio **residenciamarbella.com**.
+Soy María Ángeles Motos García (DNI 21970355L), responsable del **Centro de Mayores Mar Bella** y titular del dominio **residenciamarbella.com** (caducidad 01/07/2026).
 
-Os escribimos por tres asuntos relacionados:
+Tras conseguir acceso al panel de control y verificar la situacion actual, escribo para gestionar tres asuntos relacionados, entendiendo que **Delirium Digital y Tecnoworld son la misma entidad** y que pueden tramitarse en una unica gestion.
 
-**1. Web caida**
+**1. Verificacion del contacto registrante**
 
-Hemos detectado que residenciamarbella.com ha dejado de resolver y actualmente no apunta a ningun servicio web. El correo electronico asociado al dominio **si sigue funcionando**, por lo que entendemos que se ha tumbado unicamente el hosting web. Solicitamos:
+En el panel aparece el aviso: "Dominio pendiente de verificar el contacto registrante. Por favor revisa la cuenta de correo geriatrico@residenciamarbella.com". Procederemos a confirmar dicho enlace para evitar suspension del dominio. Si en 48h no se recibiera el correo de verificacion, solicitamos su reenvio.
 
-- Explicacion formal del corte del servicio web
-- Confirmacion de que el servicio de correo (MX, buzones IMAP/POP) se mantendra operativo sin interrupciones
-- Compromiso de no tumbar el correo sin aviso previo de al menos 15 dias
+**1.bis. Acceso al panel de hosting**
 
-El corte del hosting sin comunicacion previa constituye incumplimiento del servicio contratado.
+Al intentar gestionar las cuentas de correo desde el panel de Dinahosting, este nos indica que "el dominio tiene un hosting asociado" y que debemos acceder al Panel de Control del hosting. Solicitamos:
 
-**2. Inventario de cuentas de correo**
+- URL exacta del panel de hosting de Tecnoworld asociado a residenciamarbella.com
+- Usuario y contraseña de acceso a dicho panel
+- Listado de servicios activos en ese hosting (correo, base de datos, ficheros, etc.)
 
-Necesitamos planificar una migracion ordenada del email. Por favor, facilitadnos:
+**2. Codigo de autorizacion (Auth/EPP) y desbloqueo para transferencia**
 
-- **Listado completo de cuentas de correo activas** bajo el dominio residenciamarbella.com (direcciones, alias, listas de distribucion)
-- **Tamaño ocupado** por cada buzon
-- **Configuracion actual** (servidor IMAP/POP/SMTP, puertos, SSL/TLS)
-- **Metodo recomendado de exportacion** de los buzones (IMAP directo, descarga .mbox, backup .pst o similar) para poder migrarlos a otro proveedor sin perdida de correos
+Solicitamos formalmente:
 
-**3. Codigo de autorizacion (Auth/EPP) del dominio**
+- **Generacion y envio por email del Auth Code / codigo EPP** del dominio residenciamarbella.com a la direccion del titular registrante.
+- **Desbloqueo del dominio** (eliminar clientTransferProhibited) para permitir transferencia a otro registrador.
+- **Confirmacion por escrito** de que el dominio quedara desbloqueado en plazo maximo de 5 dias naturales, conforme a la politica ICANN de transferencias entre registradores.
 
-Tras la migracion del correo, tenemos previsto transferir el dominio a otro registrador. El 2026-04-10 recibimos credenciales (usuario: residenciamarbella) para un panel de control, pero **no logramos iniciar sesion en panel.dinahosting.com** con dichas credenciales y desde el 2026-04-11 esperamos respuesta con la URL exacta del panel.
+La transferencia se ejecutara **antes del 01/07/2026** para evitar caducidad. La nueva renovacion correra a cargo del registrador entrante.
 
-Para evitar mas demoras, solicitamos que **generen y nos envien por email el Auth Code / codigo EPP del dominio residenciamarbella.com directamente**, sin necesidad de acceso al panel, a la direccion de correo del titular que consta en el registro.
+**3. Baja de los servicios DNS y de correo (Tecnoworld)**
 
-**Importante:** entendemos que la transferencia del dominio **solo se ejecutara despues** de haber migrado los buzones de correo al nuevo proveedor, para garantizar la continuidad del servicio. Solicitamos el Auth Code ahora para tenerlo disponible y poder coordinar las fechas.
+Solicitamos la **baja definitiva** de:
+
+- Servicio de DNS: servidores `ns.tecnoworld.com` y `nsw.tecnoworld.com`.
+- Servicio de correo electronico y los siguientes buzones activos:
+ - `jesus@residenciamarbella.com`
+ - `residencia@residenciamarbella.com`
+ - `residenciamarbella@residenciamarbella.com`
+ - `geriatrico@residenciamarbella.com`
+- Cualquier otro servicio adicional asociado al dominio.
+
+Solicitamos que la baja se haga efectiva **una vez completada la migracion de buzones** al nuevo proveedor, manteniendo acceso IMAP durante 30 dias desde esta comunicacion para descarga de correos.
+
+Para coordinar la migracion sin perdida de datos, necesitamos:
+
+- **Datos IMAP/SMTP** de los servidores actuales (host, puerto, SSL/TLS) y **tamaño** de cada buzon.
+- **Fecha exacta de renovacion** del servicio para evitar cargos posteriores a la baja.
+- **Confirmacion de no renovacion automatica** y cese de cualquier cargo recurrente a partir de la fecha de baja efectiva.
 
 ---
 
-**Plazo solicitado:** 48 horas para los puntos 1 y 2, y entrega del Auth Code en el mismo plazo.
+**Plazo solicitado:** 5 dias laborables para todos los puntos.
 
-Si en ese plazo no recibimos respuesta, procederemos a formalizar reclamacion por incumplimiento ante la OMIC de Torrevieja y ante el registro ICANN correspondiente.
+Adjuntamos copia del DNI del titular para verificacion de identidad.
+
+En caso de no recibir respuesta en plazo, procederemos a presentar reclamacion ante la OMIC de Torrevieja y, en lo relativo al dominio, ante ICANN a traves del formulario de transferencia.
 
 Quedo a la espera de su respuesta.
 
@@ -51,3 +68,4 @@ Un saludo,
 María Ángeles Motos García — Centro de Mayores Mar Bella
 Avda. Alfredo Nobel, 8, 03183 Torrevieja
 Tel: 965 710 828
+Email: residencia@residenciamarbella.com
